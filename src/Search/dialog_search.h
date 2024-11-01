@@ -17,9 +17,9 @@ class DialogSearch : public QDialog{
 public:
     explicit DialogSearch(QWidget *parent = 0);
 signals:
-    void SendSearch(cJSON *root);
+    void SigSearch(cJSON *root);
 public slots:
-    void slot_recv_search(cJSON* json);
+    void SlotSearch(cJSON* json);
 private:
     QComboBox *m_status;
     QLineEdit *m_edit_id;

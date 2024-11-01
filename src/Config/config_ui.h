@@ -23,7 +23,15 @@ static constexpr const QSize CONST_SIZE_DIALOG_SEARCH_GROUP     = QSize(450, 550
 static constexpr const QSize CONST_SIZE_LAB_SEARCH_GROUP        = QSize(80, 30);//id, count
 static constexpr const QSize CONST_SIZE_PHOTO_SEARCH_GROUP      = QSize(80, 80);
 static constexpr const QSize CONST_SIZE_LAB_NAME_SEARCH_GROUP   = QSize(200, 30);
-static constexpr const QSize CONST_SIZE_BTN_SEARCH_GROUP        = QSize(50, 60);
+static constexpr const QSize CONST_SIZE_BTN_SEARCH_GROUP        = QSize(60, 30);
 static constexpr const QSize CONST_SIZE_EDIT_SEARCH_GROUP       = QSize(200, 30);
+
+/* size-Dialog-search-person */
+static constexpr const QSize CONST_SIZE_DIALOG_SEARCH_PERSON     = QSize(450, 300);
+static constexpr const QSize CONST_SIZE_LAB_SEARCH_PERSON        = QSize(80, 30);//id, count
+static constexpr const QSize CONST_SIZE_PHOTO_SEARCH_PERSON      = QSize(80, 80);
+static constexpr const QSize CONST_SIZE_BTN_SEARCH_PERSON        = QSize(60, 30);
+static constexpr const QSize CONST_SIZE_EDIT_SEARCH_PERSON       = QSize(200, 30);
+
 
 #endif // __WIDGET_CONFIG_H__

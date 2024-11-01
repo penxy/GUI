@@ -94,11 +94,11 @@ DialogSearch::DialogSearch(QWidget *parent) : QDialog(parent){
         cJSON_AddNumberToObject(content, "id", m_edit_id->text().toInt());
 
         cJSON_AddItemToObject(root, "content", content);
-        emit SendSearch(root);
+        emit SigSearch(root);
     });
 }
 
-void DialogSearch::slot_recv_search(cJSON* json){
+void DialogSearch::SlotSearch(cJSON* json){
     m_btn_click->setEnabled(true);
     m_status->setEnabled(true);
     m_movie->setPaused(true);

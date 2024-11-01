@@ -10,11 +10,6 @@ class Widget : public QWidget{
     Q_OBJECT
 public:
     explicit Widget(QWidget *parent = 0);
-signals:
-    void Send2SearchGroup(cJSON* json);
-
-public slots:
-    void Search(cJSON* json);
 private:
     QListWidget *m_list_widget;
     DialogSearch *dialog;
