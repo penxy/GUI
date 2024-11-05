@@ -85,6 +85,10 @@ DialogPerson::DialogPerson(QDialog *parent) : QDialog(parent)
 void DialogPerson::SetInfo(PersonInfo& info) {
     m_lab_id->setText(QString::number(info.id));
     m_lab_name->setText(QString::fromStdString(info.name));
-    m_photo->loadFromData(QByteArray::fromBase64(QString::fromStdString(info.photo).toLocal8Bit()));
+    m_photo = &info.photo;
     m_lab_photo->setPixmap(*m_photo);
+}
+
+DialogPerson::~DialogPerson() {
+    delete m_photo;
 }

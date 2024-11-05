@@ -15,6 +15,7 @@ class DialogGroup : public QDialog{
     Q_OBJECT
 public:
     explicit DialogGroup(QDialog *parent = 0);
+    ~DialogGroup();
     void SetInfo(GroupInfo &info);
 signals:
     void SigAddGroup(cJSON* json);

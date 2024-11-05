@@ -14,20 +14,20 @@
 struct PersonInfo{
     int id;
     std::string name;
-    std::string photo;
+    QPixmap photo;
 };
 
 struct GroupInfo{
     int id;
     std::string name;
-    std::string photo;
+    QPixmap photo;
     QList<std::shared_ptr<std::pair<PersonInfo, E_Role>>> members;
 };
 
 struct MsgInfo{
     int id;
     std::string content;
-    std::string photo; // 发送者头像
+    QPixmap photo; // 发送者头像
     time_t time;
     E_Message type;
     E_Direction direction; // 发送者还是接收者

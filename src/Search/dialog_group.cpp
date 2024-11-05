@@ -118,7 +118,7 @@ DialogGroup::DialogGroup(QDialog *parent) : QDialog(parent){
 }
 
 void DialogGroup::SetInfo(GroupInfo &info){
-    m_photo->loadFromData(QByteArray::fromBase64(QString::fromStdString(info.photo).toLocal8Bit()));
+    m_photo = &info.photo;
     m_lab_photo->setPixmap(*m_photo);
 
     m_lab_id->setText(QString::number(info.id));
@@ -134,4 +134,8 @@ void DialogGroup::SetInfo(GroupInfo &info){
             m_widget_group_member_list->setItemWidget(item, widget_member);
         }
     }
+}
+
+DialogGroup::~DialogGroup(){
+    delete m_photo;
 }

@@ -12,6 +12,8 @@ class DialogPerson : public QDialog{
     Q_OBJECT
 public:
     explicit DialogPerson(QDialog *parent = 0);
+    ~DialogPerson();
+
     void SetInfo(PersonInfo &info);
 signals:
     void SigAddPerson(cJSON *root);

@@ -3,7 +3,7 @@
 WidgetTalkTop::WidgetTalkTop(const GroupInfo &info, QWidget *parent) : QWidget(parent){
     {
         m_photo = new QPixmap();
-        m_photo->loadFromData(QByteArray::fromBase64(QString::fromStdString(info.photo).toLocal8Bit()));
+        *m_photo = info.photo;
 
         m_lab_photo = new LabelPhoto(m_photo, this);
         m_lab_name = new QLabel(QString::fromStdString(info.name), this);
