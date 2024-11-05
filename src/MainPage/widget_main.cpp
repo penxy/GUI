@@ -7,7 +7,7 @@
 void WidgetMain::init_ui(){
     m_titleBar = new TitleBar(this);
     m_widget_chat = new QWidget(this);
-    m_widget_chat->resize(CONST_SIZE_MIN_WIDGET_CHAT);
+    m_widget_chat->resize(CONST_SIZE_BASE_WIDGET_MAIN);
     m_widget_chat->setStyleSheet("background-color: #FFFFFF;border: 1px solid #E5E5E5;");
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -18,7 +18,7 @@ void WidgetMain::init_ui(){
 
     setLayout(mainLayout);
     this->setMinimumSize(CONST_SIZE_MIN_WIDGET_MAIN);
-    resize(CONST_SIZE_MIN_WIDGET_MAIN);
+    resize(CONST_SIZE_BASE_WIDGET_MAIN);
 }
 
 void WidgetMain::init_sig(){

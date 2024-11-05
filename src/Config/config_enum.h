@@ -4,7 +4,11 @@
 
 
 
-
+typedef enum{
+    Owner = 0,
+    Admin = 1,
+    Member = 2
+}E_Role;
 
 
 enum class E_Type{
@@ -27,6 +31,11 @@ enum class E_Send{
     Message,
     Action,
     File,             // 文件传输, Up/Down/Send[E_File]
+};
+
+enum class E_Direction{//发送方向
+    Send,
+    Recv
 };
 // message type
 enum class E_Message{
@@ -64,10 +73,7 @@ enum class E_Info{
     Name,
     Password
 };
-enum class E_ChangeInfo{
-    Name,
-    Password
-};
+
 
 
 

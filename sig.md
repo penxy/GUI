@@ -8,3 +8,9 @@ DialogSearch            [SigSearch]
 [目前槽]
 
 DialogSearch            [SlotSearch]
+
+WidgetLeft              [SlotReFlushFriend]
+                        [SlotReFlushGroup]
+                        [SlotSetPage]
+
+WidgetTalkMid           [SlotMessageAppend]

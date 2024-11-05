@@ -6,8 +6,10 @@
 
 int main(int argc, char *argv[])  
 {  
-    alarm(6);
+    //alarm(6);
     QApplication app(argc, argv);
     
+    Widget w;
+    w.show();
     return app.exec();
 }

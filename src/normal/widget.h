@@ -3,17 +3,19 @@
 
 #include <QWidget>
 #include <QListWidget>
-#include "Search/dialog_search.h"
+#include <QEvent>
+#include "ListBar/widget_list_friend.h"
+#include "Base/label_role.h"
+#include "TalkBar/bubble/label_msg.h"
 
 
 class Widget : public QWidget{
     Q_OBJECT
 public:
     explicit Widget(QWidget *parent = 0);
+    //void paintEvent(QPaintEvent *);
 private:
-    QListWidget *m_list_widget;
-    DialogSearch *dialog;
-    QPushButton *btn;
+    LabelMsg *test;
 };
 
 

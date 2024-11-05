@@ -25,7 +25,7 @@ include_directories(${INCLUDE_Qt5})
 
 set(LIBS ${LIBS} "${CMAKE_SOURCE_DIR}/release/Linux/lib/libcjson${CMAKE_SHARED_LIBRARY_SUFFIX}")
 
-FILE(GLOB SOURCE src/*.cpp src/*/*.cpp icons.qrc)
+FILE(GLOB SOURCE src/*.cpp src/*/*.cpp src/*/*/*.cpp icons.qrc)
 FILE(GLOB HEADER src/*/*.h)
 
 add_executable(

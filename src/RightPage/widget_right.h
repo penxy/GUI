@@ -8,7 +8,7 @@ class WidgetRight : public QWidget{
     Q_OBJECT
 public:
     explicit WidgetRight(QWidget *parent = 0);
-    
+
 };
 
 

@@ -13,7 +13,7 @@ private:
     void init_ui();
     void init_sig();
 private:
-    void resizeEvent(QResizeEvent *event);
+    void resizeEvent(QResizeEvent *event);//需要调用WidgetLeft, WidgetTool, WidgetRight的 ReSize()
 private:
     TitleBar *m_titleBar;
     QWidget *m_widget_chat;
