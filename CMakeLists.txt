@@ -13,6 +13,7 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/release/Linux/bin")
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
+list(APPEND CMAKE_AUTOUIC_SEARCH_PATHS "ui")
 set(INCLUDE_Qt5 ${Qt5Core_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS})
 set(LIBS_Qt5 ${Qt5Core_LIBRARIESY} ${Qt5Widgets_LIBRARIES})
 message(STATUS "INCLUDE_Qt5: ${INCLUDE_Qt5}")

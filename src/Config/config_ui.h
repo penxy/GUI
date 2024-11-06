@@ -55,7 +55,10 @@ static constexpr const QSize CONST_SIZE_LAB_TALK_TOP             = QSize(150, 30
 static constexpr const QSize CONST_SIZE_PHOTO_TALK_TOP           = QSize(60, 60);
 static constexpr const QSize CONST_SIZE_WIDGET_TALK_TOP          = QSize(250, 80);
 
-/* max-width-label-msg */
-static constexpr const int CONST_SIZE_MAX_WIDTH_LAB_MSG          = 200; 
+/* size-width-msg */
+static constexpr const QSize CONST_SIZE_WIDGET_MSG               = QSize(400, 120);
+static constexpr const QSize CONST_SIZE_SPACER_HORIZONTAL_MSG    = QSize(300, 30);
+static constexpr const QSize CONST_SIZE_SPACER_VERTICAL_MSG      = QSize(30, 300);
+static constexpr const QSize CONST_SIZE_PHOTO_MSG                = QSize(50, 50); 
 
 #endif // __WIDGET_CONFIG_H__

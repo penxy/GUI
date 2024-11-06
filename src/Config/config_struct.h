@@ -24,13 +24,17 @@ struct GroupInfo{
     QList<std::shared_ptr<std::pair<PersonInfo, E_Role>>> members;
 };
 
-struct MsgInfo{
-    int id;
-    std::string content;
-    QPixmap photo; // 发送者头像
+typedef struct{
     time_t time;
     E_Message type;
+    std::string content;
     E_Direction direction; // 发送者还是接收者
+}msg_info_t;
+
+struct MsgInfo{
+    int id;
+    QPixmap photo; // 发送者头像
+    msg_info_t msg_info;
 };
 
 

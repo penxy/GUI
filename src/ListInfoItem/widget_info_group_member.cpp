@@ -28,7 +28,7 @@ WidgetInfoGroupMember::WidgetInfoGroupMember(std::shared_ptr<std::pair<PersonInf
         QString name = QString::fromStdString(info.get()->first.name);
 
         m_lab_id->setText(id);
-        m_photo->loadFromData(QByteArray::fromBase64(QString::fromStdString(info.get()->first.photo).toLocal8Bit()));
+        m_photo = &info.get()->first.photo;
 
         QString role;
         if(info.get()->second == E_Role::Owner){
