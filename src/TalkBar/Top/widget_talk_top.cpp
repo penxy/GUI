@@ -1,12 +1,18 @@
 #include "widget_talk_top.h"
 
-WidgetTalkTop::WidgetTalkTop(const GroupInfo &info, QWidget *parent) : QWidget(parent){
+WidgetTalkTop::WidgetTalkTop(E_Identity type, void *info, QWidget *parent) : QWidget(parent){
     {
         m_photo = new QPixmap();
-        *m_photo = info.photo;
-
+        if(type == E_Identity::Friend){
+            PersonInfo *m_info = (PersonInfo*)(info);
+            m_photo = &m_info->photo;
+            m_lab_name = new QLabel(QString::fromStdString(m_info->name), this);
+        }else{
+            GroupInfo *m_info = (GroupInfo*)(info);
+            m_photo = &m_info->photo;
+            m_lab_name = new QLabel(QString::fromStdString(m_info->name), this);
+        }
         m_lab_photo = new LabelPhoto(m_photo, this);
-        m_lab_name = new QLabel(QString::fromStdString(info.name), this);
     }
     {
         m_lab_name->setFixedSize(CONST_SIZE_LAB_TALK_TOP);
@@ -22,7 +28,8 @@ WidgetTalkTop::WidgetTalkTop(const GroupInfo &info, QWidget *parent) : QWidget(p
         QHBoxLayout *layout_name = new QHBoxLayout(widget_name);
         layout_name->addWidget(m_lab_name);
 
-        QHBoxLayout *layout_main = new QHBoxLayout(this);
+        QBoxLayout *layout_main = new QBoxLayout(QBoxLayout::LeftToRight, this);
+        layout_main->setAlignment(Qt::AlignLeft);
         layout_main->addWidget(widget_photo);
         layout_main->setSpacing(10);
         layout_main->addWidget(widget_name);

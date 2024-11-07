@@ -33,7 +33,12 @@ typedef struct{
 
 struct MsgInfo{
     int id;
-    QPixmap photo; // 发送者头像
+    E_Identity identity;
+
+    //E_Identity::Group
+    int gid = -1;
+    E_Role role;
+
     msg_info_t msg_info;
 };
 

@@ -50,15 +50,28 @@ static constexpr const QSize CONST_SIZE_WIDGET_INFO_FRIEND       = QSize(200, 80
 static constexpr const QSize CONST_SIZE_ROLE                     = QSize(30, 20);
 
 
-/* size-talk-top */
-static constexpr const QSize CONST_SIZE_LAB_TALK_TOP             = QSize(150, 30);
-static constexpr const QSize CONST_SIZE_PHOTO_TALK_TOP           = QSize(60, 60);
-static constexpr const QSize CONST_SIZE_WIDGET_TALK_TOP          = QSize(250, 80);
+
 
 /* size-width-msg */
 static constexpr const QSize CONST_SIZE_WIDGET_MSG               = QSize(400, 120);
 static constexpr const QSize CONST_SIZE_SPACER_HORIZONTAL_MSG    = QSize(300, 30);
 static constexpr const QSize CONST_SIZE_SPACER_VERTICAL_MSG      = QSize(30, 300);
 static constexpr const QSize CONST_SIZE_PHOTO_MSG                = QSize(50, 50); 
+
+/* size-talk-top */
+static constexpr const QSize CONST_SIZE_LAB_TALK_TOP             = QSize(150, 30);
+static constexpr const QSize CONST_SIZE_PHOTO_TALK_TOP           = QSize(45, 45);
+static constexpr const QSize CONST_SIZE_WIDGET_TALK_TOP          = QSize(250, 70);
+
+/* size-talk-mid */
+static constexpr const QSize CONST_SIZE_BASE_WIDGET_TALK_MID     = QSize(450, 600);
+
+/* size-talk-buttom */
+static constexpr const QSize CONST_SIZE_BTN_TALK_BOTTOM          = QSize(50, 30);
+static constexpr const int CONST_HEIGHT_MAX_WIDGET_TALK_BOTTOM   = 120;
+
+/* size-talk-window */
+static constexpr const QSize CONST_SIZE_MIN_TALK_WINDOW          = QSize(400, 900);
+static constexpr const QSize CONST_SIZE_BASE_TALK_WINDOW         = QSize(500, 1400);
 
 #endif // __WIDGET_CONFIG_H__

@@ -3,7 +3,7 @@
 
 #include "Config/config.h"
 #include <QListWidget>
-#include "bubble/widget_msg.h"
+#include "TalkBar/bubble/widget_msg.h"
 #include <vector>
 
 class WidgetTalkMid : public QWidget{
@@ -15,14 +15,15 @@ private:
     void dealMessageTime(QString curMsgTime);
     void dealMessage(WidgetMsg *messageW, QListWidgetItem *item, QString text, QString time,  WidgetMsg::User_Type type);
 //     void on_pushButton_clicked();
-// public slots:
-//     void SlotMessageAppend(MsgInfo *msg_info);
+public slots:
+    void SlotMessageSend(E_Message type, const QString &msg);
 //     void SlotMessageSendSuccess(int index);
+//     void SlotMessageRecv(MsgInfo *msg_info);
 protected:
     void resizeEvent(QResizeEvent *);
 private:
     QListWidget *m_list_widget;
-    std::vector<WidgetMsg*>m_widget_msg_vec;
+    std::vector<WidgetMsg*>m_widget_msg_vec;//不需要手动析构
 };
 
 

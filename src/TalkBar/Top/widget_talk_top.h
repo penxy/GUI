@@ -9,21 +9,11 @@
 class WidgetTalkTop : public QWidget{
     Q_OBJECT
 public:
-    explicit WidgetTalkTop(const GroupInfo& info, QWidget *parent = 0);
+    explicit WidgetTalkTop(E_Identity type, void* info, QWidget *parent = 0);
 private:
     LabelPhoto *m_lab_photo;
     QPixmap *m_photo;
     QLabel *m_lab_name;
 };
-
-
-
-
-
-
-
-
-
-
 
 #endif // __WIDGET_TALK_TOP_H__
