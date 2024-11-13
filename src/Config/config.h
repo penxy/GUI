@@ -8,6 +8,7 @@
 #include "config_ui.h"
 
 #include "Base/widget_blank.h"
+#include "Base/Layout.h"
 
 #include <QWidget>
 #include <QLabel>
@@ -15,8 +16,10 @@
 #include <QPushButton>
 #include <QString>
 
+#include <memory>
+
+
 #include <iostream>
 #include <QDebug>
-
 
 #endif //__CONFIG__H__

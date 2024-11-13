@@ -14,3 +14,7 @@ WidgetLeft              [SlotReFlushFriend]
                         [SlotSetPage]
 
 WidgetTalkMid           [SlotMessageAppend]
+
+
+[已完成信号链]
+WidgetTool::SigBtnClick     ->WidgetRight::SlotWidgetChange

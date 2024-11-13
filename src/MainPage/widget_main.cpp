@@ -3,39 +3,39 @@
 #include <QDebug>
 #include <QWidget>
 #include "Config/config_ui.h"
+#include "Base/Line.h"
 
-void WidgetMain::init_ui(){
-    m_titleBar = new TitleBar(this);
-    m_widget_chat = new QWidget(this);
-    m_widget_chat->resize(CONST_SIZE_BASE_WIDGET_MAIN);
-    m_widget_chat->setStyleSheet("background-color: #FFFFFF;border: 1px solid #E5E5E5;");
+WidgetMain::WidgetMain(QWidget *parent) : QWidget(parent){
+    {
+        this->setWindowFlags(Qt::FramelessWindowHint);  //设置无边框
+        // this->setStyleSheet("border:none;background-color:#F0F0F0;");
+    }
+    m_title_bar = new TitleBar(this);
+    m_widget_tool = new WidgetTool(this);
+    m_widget_right = new WidgetRight(m_widget_tool, this);
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->addWidget(m_titleBar);
-    mainLayout->setSpacing(5);
-    mainLayout->addWidget(m_widget_chat);
-    mainLayout->setSpacing(0);
+    WidgetBlank *widget_right = new WidgetBlank(this);
+    Layout *layout_right = new Layout(QBoxLayout::Direction::TopToBottom, widget_right);
+    layout_right->addWidget(m_title_bar);
+    layout_right->addWidget(new Line(widget_right));
+    layout_right->addWidget(m_widget_right);
 
-    setLayout(mainLayout);
-    this->setMinimumSize(CONST_SIZE_MIN_WIDGET_MAIN);
-    resize(CONST_SIZE_BASE_WIDGET_MAIN);
+    Layout *layout_main = new Layout(QBoxLayout::Direction::LeftToRight, this);
+    layout_main->addWidget(m_widget_tool);
+    layout_main->addWidget(widget_right);
+
+    this->resize(CONST_SIZE_BASE_WIDGET_MAIN);
+
+    {
+      QString qss = QString(R"(
+        QStackedWidget{
+          border-radius: 10px;
+        }
+      )");
+    }
 }
 
-void WidgetMain::init_sig(){
-    
-}
 
-WidgetMain::WidgetMain(QWidget *parent) : WidgetBase(parent){
-    init_ui();
-    init_sig();
-    m_old_size = this->size();
-}
-
-void WidgetMain::resizeEvent(QResizeEvent *event){
-    QSize new_size = this->window()->size();
-    double scale_x = new_size.width() / m_old_size.width();
-    double scale_y = new_size.height() / m_old_size.height();
-    m_widget_chat->resize(m_widget_chat->size().width() * scale_x, m_widget_chat->size().height() * scale_y);
-    m_titleBar->resize(m_titleBar->size().width() * scale_x, m_titleBar->size().height() * scale_y);
-    m_old_size = new_size;
+WidgetMain::~WidgetMain(){
+  
 }

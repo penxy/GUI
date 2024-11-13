@@ -1,22 +1,25 @@
 #ifndef __WIDGET_MAIN_H__
 #define __WIDGET_MAIN_H__
 
-#include "TitleBar/titlebar.h"
+#include "Config/config.h"
 #include "Base/widget_base.h"
-#include <QResizeEvent>
 
-class WidgetMain : public WidgetBase{
+#include "TitleBar/titlebar.h"
+#include "ToolBar/widget_tool.h"
+#include "RightPage/widget_right.h"
+#include <QMouseEvent>
+
+class WidgetMain : public QWidget{
     Q_OBJECT
 public:
     explicit WidgetMain(QWidget *parent = nullptr);
+    ~WidgetMain();
 private:
-    void init_ui();
-    void init_sig();
-private:
-    void resizeEvent(QResizeEvent *event);//需要调用WidgetLeft, WidgetTool, WidgetRight的 ReSize()
-private:
-    TitleBar *m_titleBar;
-    QWidget *m_widget_chat;
+    TitleBar *m_title_bar;
+
+    WidgetTool *m_widget_tool;
+    WidgetRight *m_widget_right;
+    QPoint m_dragPosition;
 };
 
 

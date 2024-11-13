@@ -6,7 +6,7 @@
 #include <QPainter>
 #include <unistd.h>
 
-BtnTool::BtnTool(BtnType type, QStringList&& path_list, QWidget *parent) : QPushButton(parent), m_type(type){
+BtnTool::BtnTool(TypeBtn type, QStringList&& path_list, QWidget *parent) : QPushButton(parent), m_type(type){
     m_path_move_in = path_list.at(0);
     m_path_move_out = path_list.at(1);
     

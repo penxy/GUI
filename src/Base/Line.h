@@ -5,7 +5,11 @@
 
 class Line : public QFrame{
 public:
-    explicit Line(QWidget *parent = 0);
+    enum class TypeLine{
+        H,
+        V
+    };
+    explicit Line(QWidget *parent = 0, TypeLine type = TypeLine::H);
 };
 
 #endif // __LINE_H__

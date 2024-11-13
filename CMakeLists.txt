@@ -6,6 +6,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+add_compile_options(-g3)  # 添加-g3选项以生成更详细的调试信息
+
 
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/release/Linux/bin")
   

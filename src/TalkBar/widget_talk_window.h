@@ -8,18 +8,18 @@
 #include "TalkBar/Top/widget_talk_top.h"
 #include "TalkBar/Mid/widget_talk_mid.h"
 #include "TalkBar/Buttom/widget_talk_bottom.h"
-
+#include <memory>
 
 class WidgetTalkWindow : public QWidget{
     Q_OBJECT
 public:
-    explicit WidgetTalkWindow(E_Identity type, void *info, QWidget *parent = 0);
+    explicit WidgetTalkWindow(E_Identity type, std::shared_ptr<void>info, QWidget *parent = 0);
     ~WidgetTalkWindow();
 private:
     E_Identity m_type;
 
-    GroupInfo *m_groupInfo = nullptr;
-    PersonInfo *m_personInfo = nullptr;
+    std::shared_ptr<GroupInfo> m_groupInfo = nullptr;
+    std::shared_ptr<PersonInfo> m_personInfo = nullptr;
 
     WidgetTalkTop *m_talkTop;
     WidgetTalkMid *m_talkMid;

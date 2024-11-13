@@ -7,11 +7,10 @@
 #include <QList>
 #include "Base/label_photo.h"
 
-
 class WidgetInfoFriend : public QWidget{
     Q_OBJECT
 public:
-    explicit WidgetInfoFriend(PersonInfo&& info, QWidget *parent = 0);
+    explicit WidgetInfoFriend(std::shared_ptr<PersonInfo> info, QWidget *parent = 0);
 public:
     int GetId() const;
 private:

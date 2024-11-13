@@ -8,13 +8,13 @@
 #include <QPoint>
 #include <QtDebug>
 #include <QPalette>
+#include "Config/config_ui.h"
 
 TitleBar::TitleBar(QWidget *parent)
     : QWidget(parent)
 {
-    barHeight = 30;
     setWindowFlag(Qt::FramelessWindowHint);
-    setFixedHeight(barHeight);
+    setFixedHeight(CONST_HEIGHT_TITLE_BAR);
     setFocusPolicy(Qt::StrongFocus);
 
     iconLabel = new QLabel(this);

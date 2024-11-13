@@ -8,13 +8,14 @@
 #include <time.h>
 #include "cjson/cJSON.h"
 #include "config_enum.h"
-
-
+#include <QDebug>
 
 struct PersonInfo{
     int id;
     std::string name;
     QPixmap photo;
+    PersonInfo() = default;
+    PersonInfo(int id, const char *name, QPixmap photo) : id(id), name(name), photo(photo) {};
 };
 
 struct GroupInfo{

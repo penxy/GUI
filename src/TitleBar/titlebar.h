@@ -46,7 +46,6 @@ private:
     TitleButton *maxBtn;
     TitleButton *closeBtn;
 
-    int barHeight;
     bool isOnTop = false;
 };
 

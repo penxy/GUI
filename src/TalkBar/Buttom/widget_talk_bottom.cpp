@@ -4,6 +4,7 @@ WidgetTalkBottom::WidgetTalkBottom(QWidget *parent) : QWidget(parent){
     {
         m_btn_send = new QPushButton("发送", this);
         m_edit = new QTextEdit(this);
+        m_edit->installEventFilter(this);//触发eventFilter
     }
     {
         m_btn_send->setFixedSize(CONST_SIZE_BTN_TALK_BOTTOM);
@@ -18,6 +19,7 @@ WidgetTalkBottom::WidgetTalkBottom(QWidget *parent) : QWidget(parent){
         WidgetBlank *widget_btn = new WidgetBlank(this);
         QHBoxLayout *layout_btn = new QHBoxLayout(widget_btn);
         layout_btn->addWidget(m_btn_send);
+        layout_btn->setAlignment(Qt::AlignTop);
 
         QHBoxLayout *layout = new QHBoxLayout(this);
         layout->addWidget(widget_edit);
@@ -29,5 +31,25 @@ WidgetTalkBottom::WidgetTalkBottom(QWidget *parent) : QWidget(parent){
             m_edit->clear();
         });
     }
+    {
+        QString qss = QString(R"(
+            QTextEdit{
+                font-size: 15px;
+            }
+        )");
+        this->setStyleSheet(qss);
+    }
 }
 
+
+bool WidgetTalkBottom::eventFilter(QObject *obj, QEvent *event) {
+    if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+        if (keyEvent->key() == Qt::Key_Return || keyEvent->key() == Qt::Key_Enter) {
+            emit SigSendMsg(E_Message::Text, m_edit->toPlainText());
+            m_edit->clear();
+            return true; // 事件已处理
+        }
+    }
+    return QWidget::eventFilter(obj, event);
+}

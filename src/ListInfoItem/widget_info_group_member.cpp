@@ -1,5 +1,5 @@
 #include "widget_info_group_member.h"
-#include "config_info_ui.h"
+#include "Config/config_ui.h"
 #include "Base/widget_blank.h"
 #include <QHBoxLayout>
 

@@ -2,20 +2,21 @@
 #include <QBitmap>
 #include <QPainter>
 
-WidgetInfoFriend::WidgetInfoFriend(PersonInfo&& info, QWidget *parent) : QWidget(parent){
+WidgetInfoFriend::WidgetInfoFriend(std::shared_ptr<PersonInfo> info, QWidget *parent) : QWidget(parent){
     {
         m_photo = new QPixmap();
-        m_photo = &info.photo;
- 
-        m_lab_photo = new LabelPhoto(m_photo, this);
-        m_lab_name = new QLabel(this);
         m_lab_id = new QLabel(this);
+        m_lab_name = new QLabel(this);
+        
+        m_lab_id->setToolTip("id");
+        m_lab_name->setToolTip("name");
     }
     {
-        m_lab_id->setText(QString::number(info.id));
-        m_lab_id->setToolTip("id");
-        m_lab_name->setText(QString::fromStdString(info.name));
-        m_lab_name->setToolTip("name");
+        m_lab_id->setText(QString::number(info.get()->id));
+        m_lab_name->setText(QString::fromStdString(info.get()->name));
+        m_photo = &info.get()->photo;
+
+        m_lab_photo = new LabelPhoto(m_photo, this);
     }
     {
         m_lab_photo->setFixedSize(CONST_SIZE_PHOTO_INFO_FRIEND);
@@ -26,6 +27,7 @@ WidgetInfoFriend::WidgetInfoFriend(PersonInfo&& info, QWidget *parent) : QWidget
     {
         WidgetBlank* widget_photo = new WidgetBlank(this);
         QVBoxLayout* layout_photo = new QVBoxLayout(widget_photo);
+        layout_photo->setMargin(0);
         layout_photo->addWidget(m_lab_photo);
 
         WidgetBlank* widget_id_name = new WidgetBlank(this);
