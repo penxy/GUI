@@ -2,14 +2,13 @@
 
 WidgetTalkTop::WidgetTalkTop(E_Identity type, std::shared_ptr<void> info, QWidget *parent) : QWidget(parent){
     {
-        m_photo = new QPixmap();
         if(type == E_Identity::Friend){
             std::shared_ptr<PersonInfo> m_info = std::static_pointer_cast<PersonInfo>(info);
-            m_photo = &m_info.get()->photo;
+            m_photo = m_info.get()->photo;
             m_lab_name = new QLabel(QString::fromStdString(m_info.get()->name), this);
         }else{
             std::shared_ptr<GroupInfo> m_info = std::static_pointer_cast<GroupInfo>(info);
-            m_photo = &m_info.get()->photo;
+            m_photo = m_info.get()->photo;
             m_lab_name = new QLabel(QString::fromStdString(m_info.get()->name), this);
         }
         m_lab_photo = new LabelPhoto(m_photo, this);

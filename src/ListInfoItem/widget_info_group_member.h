@@ -9,13 +9,13 @@
 class WidgetInfoGroupMember : public QWidget{
     Q_OBJECT
 public:
-    explicit WidgetInfoGroupMember(std::shared_ptr<std::pair<PersonInfo, E_Role>> info, QWidget *parent = nullptr);
+    explicit WidgetInfoGroupMember(std::pair<PersonInfo, E_Role>& info, QWidget *parent = nullptr);
 private:
     QLabel *m_lab_photo;
     QLabel *m_lab_name;
     QLabel *m_lab_id;
     QLabel *m_lab_role;
-    QPixmap *m_photo;
+    QPixmap m_photo;
 };
 
 #endif // __WIDGET_INFO_GROUP_MEMBER_H__

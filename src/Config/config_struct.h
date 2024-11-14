@@ -22,7 +22,9 @@ struct GroupInfo{
     int id;
     std::string name;
     QPixmap photo;
-    QList<std::shared_ptr<std::pair<PersonInfo, E_Role>>> members;
+    QList<std::pair<PersonInfo, E_Role>> members;
+    GroupInfo() = default;
+    GroupInfo(int id, const char *name, QPixmap photo, QList<std::pair<PersonInfo, E_Role>> members) : id(id), name(name), photo(photo), members(members) {};
 };
 
 typedef struct{

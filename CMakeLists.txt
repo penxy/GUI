@@ -28,7 +28,26 @@ include_directories(${INCLUDE_Qt5})
 
 set(LIBS ${LIBS} "${CMAKE_SOURCE_DIR}/release/Linux/lib/libcjson${CMAKE_SHARED_LIBRARY_SUFFIX}")
 
-FILE(GLOB SOURCE src/*.cpp src/*/*.cpp src/*/*/*.cpp icons.qrc)
+FILE(GLOB SOURCE 
+    # src/*.cpp 
+    # src/*/*.cpp 
+    # src/*/*/*.cpp 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Base/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ListBar/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ListInfoItem/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/MainPage/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Message/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/normal/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RightPage/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RightPage/WidgetType/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Search/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/TalkBar/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/TalkBar/*/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/TitleBar/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ToolBar/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+    icons.qrc
+)
 FILE(GLOB HEADER src/*/*.h)
 
 add_executable(

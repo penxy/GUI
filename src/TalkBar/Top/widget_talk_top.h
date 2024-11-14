@@ -12,7 +12,7 @@ public:
     explicit WidgetTalkTop(E_Identity type, std::shared_ptr<void> info, QWidget *parent = 0);
 private:
     LabelPhoto *m_lab_photo;
-    QPixmap *m_photo;
+    QPixmap m_photo;
     QLabel *m_lab_name;
 };
 

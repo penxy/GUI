@@ -7,28 +7,12 @@
 #include <iostream>
 
 
-/* size-Dialog-search */ 
-static constexpr const QSize CONST_SIZE_DIALOG_SEARCH            = QSize(350, 200);
+
  
-static constexpr const QSize CONST_SIZE_LAB_SEARCH               = QSize(10, 10);
-static constexpr const QSize CONST_SIZE_EDIT_SEARCH              = QSize(200, 30);
-static constexpr const QSize CONST_SIZE_BTN_SEARCH               = QSize(50, 30);
-static constexpr const QSize CONST_SIZE_STATUS_SEARCH            = QSize(200, 30);
- 
-/* size-Dialog-search-group */ 
-static constexpr const QSize CONST_SIZE_DIALOG_SEARCH_GROUP      = QSize(450, 550);
-static constexpr const QSize CONST_SIZE_LAB_SEARCH_GROUP         = QSize(80, 30);//id, count
-static constexpr const QSize CONST_SIZE_PHOTO_SEARCH_GROUP       = QSize(80, 80);
-static constexpr const QSize CONST_SIZE_LAB_NAME_SEARCH_GROUP    = QSize(200, 30);
-static constexpr const QSize CONST_SIZE_BTN_SEARCH_GROUP         = QSize(60, 30);
-static constexpr const QSize CONST_SIZE_EDIT_SEARCH_GROUP        = QSize(200, 30);
+
 
 /* size-Dialog-search-person */
-static constexpr const QSize CONST_SIZE_DIALOG_SEARCH_PERSON     = QSize(450, 300);
-static constexpr const QSize CONST_SIZE_LAB_SEARCH_PERSON        = QSize(80, 30);//id, count
-static constexpr const QSize CONST_SIZE_PHOTO_SEARCH_PERSON      = QSize(80, 80);
-static constexpr const QSize CONST_SIZE_BTN_SEARCH_PERSON        = QSize(60, 30);
-static constexpr const QSize CONST_SIZE_EDIT_SEARCH_PERSON       = QSize(200, 30);
+
 
 
 /* size-btn-tool */
@@ -37,7 +21,7 @@ static constexpr const QSize CONST_SIZE_BTN_TOOL                 = QSize(50, 50)
 static constexpr const int CONST_WIDTH_WIDGET_TOOL               = 55;
 
 
-/* size-friend-info */
+/* size-friend-info-list */
 static constexpr const QSize CONST_SIZE_ID_INFO_FRIEND           = QSize(80, 30);
 static constexpr const QSize CONST_SIZE_NAME_INFO_FRIEND         = QSize(120, 30);
 static constexpr const QSize CONST_SIZE_PHOTO_INFO_FRIEND        = QSize(57, 57);
@@ -67,9 +51,7 @@ static constexpr const int CONST_WIDTH_WIDGET_LIST_BAR           = 300;
 /* size-title */
 static constexpr const int CONST_HEIGHT_TITLE_BAR                = 30;
 
-
-
-
+//============================================Talk============================================
 /* size-talk-top */
 static constexpr const QSize CONST_SIZE_LAB_TALK_TOP             = QSize(150, 30);
 static constexpr const QSize CONST_SIZE_PHOTO_TALK_TOP           = QSize(45, 45);
@@ -89,6 +71,33 @@ static constexpr const QSize CONST_SIZE_BASE_TALK_WINDOW         = QSize(500, 60
 
 /* size-page-right */
 static constexpr const QSize CONST_SIZE_BASE_WIDGET_RIGHT        = QSize(CONST_SIZE_BASE_TALK_WINDOW.width() + CONST_WIDTH_WIDGET_TOOL, CONST_SIZE_BASE_TALK_WINDOW.height());
+//============================================Talk============================================
+
+
+//============================================Search============================================
+/* size-search-left */ 
+static constexpr const int CONST_WIDTH_WIDGET_SEARCH_LEFT             = CONST_WIDTH_WIDGET_LIST_BAR;
+static constexpr const QSize CONST_SIZE_LAB_SEARCH_LEFT               = QSize(10, 10);
+static constexpr const QSize CONST_SIZE_EDIT_SEARCH_LEFT              = QSize(180, 30);
+static constexpr const QSize CONST_SIZE_BTN_SEARCH_LEFT               = QSize(50, 30);
+static constexpr const QSize CONST_SIZE_STATUS_SEARCH_LEFT            = QSize(180, 30);
+/* size-search-person */
+static constexpr const QSize CONST_SIZE_BASE_WIDGET_SEARCH_PERSON       = CONST_SIZE_BASE_WIDGET_RIGHT;
+static constexpr const QSize CONST_SIZE_LAB_SEARCH_PERSON               = QSize(80, 30);//id, count
+static constexpr const QSize CONST_SIZE_PHOTO_SEARCH_PERSON             = QSize(80, 80);
+static constexpr const QSize CONST_SIZE_BTN_SEARCH_PERSON               = QSize(60, 30);
+static constexpr const QSize CONST_SIZE_EDIT_SEARCH_PERSON              = QSize(200, 30);
+/* size-search-group */ 
+static constexpr const QSize CONST_SIZE_BASE_WIDGET_SEARCH_GROUP        = CONST_SIZE_BASE_WIDGET_SEARCH_PERSON;
+static constexpr const QSize CONST_SIZE_LAB_SEARCH_GROUP                = QSize(80, 30);//id, count
+static constexpr const QSize CONST_SIZE_PHOTO_SEARCH_GROUP              = QSize(80, 80);
+static constexpr const QSize CONST_SIZE_LAB_NAME_SEARCH_GROUP           = QSize(200, 30);
+static constexpr const QSize CONST_SIZE_BTN_SEARCH_GROUP                = QSize(60, 30);
+static constexpr const QSize CONST_SIZE_EDIT_SEARCH_GROUP               = QSize(200, 30);
+
+//============================================Search============================================
+
+
 
 
 /* size-widget-main */

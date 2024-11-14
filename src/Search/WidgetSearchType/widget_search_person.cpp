@@ -1,16 +1,12 @@
-#include "dialog_person.h"
-#include <QHBoxLayout>
-#include "Base/widget_blank.h"
+#include "widget_search_person.h"
 
-DialogPerson::DialogPerson(QDialog *parent) : QDialog(parent)
-{
+WidgetSearchPerson::WidgetSearchPerson(QWidget *parent) : QWidget(parent){
     {
         m_lab_id = new QLabel(this);
         m_lab_name = new QLabel(this);
         m_lab_photo = new QLabel(this);
         m_edit_msg = new QLineEdit(this);
         m_btn_add_person = new QPushButton(this);
-        m_photo = new QPixmap();
     }    
 
     {
@@ -25,7 +21,7 @@ DialogPerson::DialogPerson(QDialog *parent) : QDialog(parent)
         m_lab_photo->setFixedSize(CONST_SIZE_PHOTO_SEARCH_PERSON);
         m_edit_msg->setFixedSize(CONST_SIZE_EDIT_SEARCH_PERSON);
         m_btn_add_person->setFixedSize(CONST_SIZE_BTN_SEARCH_PERSON);
-        this->setFixedSize(CONST_SIZE_DIALOG_SEARCH_PERSON);
+        this->resize(CONST_SIZE_BASE_WIDGET_SEARCH_PERSON);
     }
 
     {
@@ -62,7 +58,6 @@ DialogPerson::DialogPerson(QDialog *parent) : QDialog(parent)
             "msg" : "xxx",//验证消息
         }
     }
-    
      */
     {
         connect(m_btn_add_person, &QPushButton::clicked, this, [&](){
@@ -82,13 +77,9 @@ DialogPerson::DialogPerson(QDialog *parent) : QDialog(parent)
         });
     }
 }
-void DialogPerson::SetInfo(PersonInfo& info) {
-    m_lab_id->setText(QString::number(info.id));
-    m_lab_name->setText(QString::fromStdString(info.name));
-    m_photo = &info.photo;
-    m_lab_photo->setPixmap(*m_photo);
-}
-
-DialogPerson::~DialogPerson() {
-    delete m_photo;
+void WidgetSearchPerson::SetInfo(std::shared_ptr<PersonInfo>info) {
+    m_lab_id->setText(QString::number(info.get()->id));
+    m_lab_name->setText(QString::fromStdString(info.get()->name));
+    m_photo = info.get()->photo;
+    m_lab_photo->setPixmap(m_photo);
 }

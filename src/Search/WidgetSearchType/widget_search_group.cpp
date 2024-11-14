@@ -1,13 +1,7 @@
-#include "dialog_group.h"
-#include "Config/config_ui.h"
-#include "Base/widget_blank.h"
+#include "widget_search_group.h"
+#include "ListInfoItem/widget_info_group_member.h"
 
-#include <QHBoxLayout>
-
-
-
-
-DialogGroup::DialogGroup(QDialog *parent) : QDialog(parent){
+WidgetSearchGroup::WidgetSearchGroup(QWidget *parent) : QWidget(parent){
     {
         m_lab_photo = new QLabel(this);
         m_lab_id = new QLabel(this);
@@ -15,8 +9,6 @@ DialogGroup::DialogGroup(QDialog *parent) : QDialog(parent){
         m_lab_name = new QLabel(this);
         m_edit_msg = new QLineEdit(this);
         m_btn_add_group = new QPushButton(this);
-        m_photo = new QPixmap();
-
         m_widget_group_member_list = new QListWidget(this);
     }
     {        
@@ -31,7 +23,7 @@ DialogGroup::DialogGroup(QDialog *parent) : QDialog(parent){
         m_edit_msg->            setFixedSize(CONST_SIZE_EDIT_SEARCH_GROUP);
         m_btn_add_group->       setFixedSize(CONST_SIZE_BTN_SEARCH_GROUP);
         m_lab_photo->           setFixedSize(CONST_SIZE_PHOTO_SEARCH_GROUP);
-        this->                  setFixedSize(CONST_SIZE_DIALOG_SEARCH_GROUP);
+        this->                  resize(CONST_SIZE_BASE_WIDGET_SEARCH_GROUP);
     }
     {
         WidgetBlank *widget_photo = new WidgetBlank(this);
@@ -117,25 +109,21 @@ DialogGroup::DialogGroup(QDialog *parent) : QDialog(parent){
     }
 }
 
-void DialogGroup::SetInfo(GroupInfo &info){
-    m_photo = &info.photo;
+void WidgetSearchGroup::SetInfo(std::shared_ptr<GroupInfo>info){
+    m_photo = std::make_shared<QPixmap>(info.get()->photo);
     m_lab_photo->setPixmap(*m_photo);
 
-    m_lab_id->setText(QString::number(info.id));
-    m_lab_member_count->setText(QString::number((int)info.members.size()));
-    m_lab_name->setText(QString::fromStdString(info.name));
+    m_lab_id->setText(QString::number(info.get()->id));
+    m_lab_member_count->setText(QString::number((int)info.get()->members.size()));
+    m_lab_name->setText(QString::fromStdString(info.get()->name));
 
     /* set-item */
     {
-        for(int i = 0;i < (int)info.members.size(); i++){
-            WidgetInfoGroupMember *widget_member = new WidgetInfoGroupMember(info.members[i], this);
+        for(int i = 0;i < (int)info.get()->members.size(); i++){
+            WidgetInfoGroupMember *widget_member = new WidgetInfoGroupMember(info.get()->members[i], this);
             QListWidgetItem *item = new QListWidgetItem(m_widget_group_member_list);
             item->setSizeHint(widget_member->sizeHint());
             m_widget_group_member_list->setItemWidget(item, widget_member);
         }
     }
-}
-
-DialogGroup::~DialogGroup(){
-    delete m_photo;
 }

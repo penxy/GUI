@@ -3,13 +3,12 @@
 #include "Base/widget_blank.h"
 #include <QHBoxLayout>
 
-WidgetInfoGroupMember::WidgetInfoGroupMember(std::shared_ptr<std::pair<PersonInfo, E_Role>> info, QWidget *parent) : QWidget(parent) {
+WidgetInfoGroupMember::WidgetInfoGroupMember(std::pair<PersonInfo, E_Role>& info, QWidget *parent) : QWidget(parent) {
     {
         m_lab_id = new QLabel(this);
         m_lab_name = new QLabel(this);
         m_lab_photo = new QLabel(this);
         m_lab_role = new QLabel(this);
-        m_photo = new QPixmap();
     }
     {
         m_lab_id->setFixedSize(CONST_SIZE_LAB_INFO);
@@ -24,16 +23,16 @@ WidgetInfoGroupMember::WidgetInfoGroupMember(std::shared_ptr<std::pair<PersonInf
         m_lab_photo->setToolTip("photo");
     }
     {
-        QString id = QString::number(info.get()->first.id);
-        QString name = QString::fromStdString(info.get()->first.name);
+        QString id = QString::number(info.first.id);
+        QString name = QString::fromStdString(info.first.name);
 
         m_lab_id->setText(id);
-        m_photo = &info.get()->first.photo;
+        m_photo = info.first.photo;
 
         QString role;
-        if(info.get()->second == E_Role::Owner){
+        if(info.second == E_Role::Owner){
             role = "群主";
-        }else if(info.get()->second == E_Role::Admin){
+        }else if(info.second == E_Role::Admin){
             role = "管理员";
         }else{
             role = "成员";
@@ -41,7 +40,7 @@ WidgetInfoGroupMember::WidgetInfoGroupMember(std::shared_ptr<std::pair<PersonInf
         m_lab_id->setText(id);
         m_lab_name->setText(name);
         m_lab_role->setText(role);
-        m_lab_photo->setPixmap(*m_photo);
+        m_lab_photo->setPixmap(m_photo);
         m_lab_photo->setScaledContents(true);
         m_lab_photo->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     }

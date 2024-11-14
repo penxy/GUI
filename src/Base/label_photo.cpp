@@ -1,7 +1,7 @@
 #include "label_photo.h"
 
-LabelPhoto::LabelPhoto(QPixmap *photo, QWidget *parent) : QLabel(parent){
-    setPixmap(*photo);
+LabelPhoto::LabelPhoto(QPixmap photo, QWidget *parent) : QLabel(parent){
+    setPixmap(photo);
     setScaledContents(true);
     setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
 

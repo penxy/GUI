@@ -17,8 +17,7 @@ private:
     LabelPhoto *m_lab_photo;
     QLabel *m_lab_id;
     QLabel *m_lab_name;
-
-    QPixmap *m_photo;
+    std::shared_ptr<PersonInfo>m_info;
 };
 
 

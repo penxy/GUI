@@ -2,9 +2,8 @@
 #include <QBitmap>
 #include <QPainter>
 
-WidgetInfoFriend::WidgetInfoFriend(std::shared_ptr<PersonInfo> info, QWidget *parent) : QWidget(parent){
+WidgetInfoFriend::WidgetInfoFriend(std::shared_ptr<PersonInfo> info, QWidget *parent) : QWidget(parent), m_info(info){
     {
-        m_photo = new QPixmap();
         m_lab_id = new QLabel(this);
         m_lab_name = new QLabel(this);
         
@@ -14,9 +13,7 @@ WidgetInfoFriend::WidgetInfoFriend(std::shared_ptr<PersonInfo> info, QWidget *pa
     {
         m_lab_id->setText(QString::number(info.get()->id));
         m_lab_name->setText(QString::fromStdString(info.get()->name));
-        m_photo = &info.get()->photo;
-
-        m_lab_photo = new LabelPhoto(m_photo, this);
+        m_lab_photo = new LabelPhoto(m_info.get()->photo, this);
     }
     {
         m_lab_photo->setFixedSize(CONST_SIZE_PHOTO_INFO_FRIEND);

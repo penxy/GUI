@@ -6,7 +6,7 @@
 class LabelPhoto : public QLabel{
     Q_OBJECT
 public:
-    explicit LabelPhoto(QPixmap *photo, QWidget *parent = 0);
+    explicit LabelPhoto(QPixmap photo, QWidget *parent = 0);
 };
 
 
