@@ -73,5 +73,7 @@
         <file>Icons/MainWindow/top_chat.png</file>
         <file>Icons/MainWindow/loading2.gif</file>
         <file>Icons/MainWindow/deleted.png</file>
+        <file>Icons/image.png</file>
+        <file>Icons/back-gound.png</file>
     </qresource>
 </RCC>
