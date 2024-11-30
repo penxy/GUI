@@ -2,6 +2,10 @@
 
 #include "config.h"
 
+#include <QWidget>
+#include <QTextEdit>
+#include <QPushButton>
+
 //TODO: 后续添加其它按钮
 class ChatBtm : public QWidget{
     Q_OBJECT
@@ -12,6 +16,6 @@ signals:
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;
 private:
-    QPushButton m_btn_send;
     QTextEdit m_edit;
+    QPushButton m_btn_send;
 };

@@ -1,5 +1,6 @@
 #include "title_bar.h"
 #include <QMainWindow>
+#include <QHBoxLayout>
 
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent){
     setWindowFlag(Qt::FramelessWindowHint);
@@ -9,11 +10,9 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent){
     QStringList path_list_btn_min;
     path_list_btn_min << ":/Icons/MainWindow/min.png";
     m_btn_min = new TitleBtn(std::move(path_list_btn_min));
-
     QStringList path_list_btn_max;
     path_list_btn_max << ":/Icons/MainWindow/max.png";
     m_btn_max = new TitleBtn(std::move(path_list_btn_max));
-
     QStringList path_list_btn_close;
     path_list_btn_close << ":/Icons/MainWindow/close.png";
     m_btn_close = new TitleBtn(std::move(path_list_btn_close));
@@ -33,8 +32,6 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent){
     connect(m_btn_min, &TitleBtn::clicked, this, &TitleBar::onClicked);
     connect(m_btn_max, &TitleBtn::clicked, this, &TitleBar::onClicked);
     connect(m_btn_close, &TitleBtn::clicked, this, &TitleBar::onClicked);
-
-    this->setFixedHeight(sz::title_bar_h);    
 }
 
 void TitleBar::onClicked()

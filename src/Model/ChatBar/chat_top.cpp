@@ -1,4 +1,7 @@
 #include "chat_top.h"
+#include <QHBoxLayout>
+
+#include "utils/tool.h"
 
 ChatTop::ChatTop(QWidget *parent) : WidgetBlank(parent){
     {
@@ -9,28 +12,15 @@ ChatTop::ChatTop(QWidget *parent) : WidgetBlank(parent){
     {
         QHBoxLayout *layout_photo = new QHBoxLayout;
         layout_photo->addWidget(&m_lab_photo);
-
         QHBoxLayout *layout_name = new QHBoxLayout;
         layout_name->addWidget(&m_lab_name);
-
         QBoxLayout *layout_main = new QBoxLayout(QBoxLayout::LeftToRight, this);
         layout_main->setAlignment(Qt::AlignLeft);
         layout_main->addLayout(layout_photo);
         layout_main->setSpacing(10);
         layout_main->addLayout(layout_name);
-    }
-    {
-        QString qss = R"(
-            QLabel {
-                font-family: "Microsoft YaHei";
-                font-size: 12px;
-                font-style: italic;
-                font-weight: bold;
-                color: rgb(66, 245, 120);
-                font: bold italic 18px "Microsoft YaHei";
-            }
-        )";
-        this->setStyleSheet(qss);
+
+        this->setStyleSheet(TOOL.getQss(Tool::TypeQss::Label));
     }
 }
 

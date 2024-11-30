@@ -1,6 +1,10 @@
 #pragma once
 #include "config.h"
 
+#include <QListWidget>
+#include <QWidget>
+#include <memory>
+
 /**
  * @file core_list.h
  * @class CoreList

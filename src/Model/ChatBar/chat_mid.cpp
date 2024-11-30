@@ -1,11 +1,6 @@
 #include "chat_mid.h"
 #include <QDateTime>
-/*
-dealMessageTime(time);
-WidgetMsg* messageW = new WidgetMsg(m_list_widget->parentWidget());
-QListWidgetItem* item = new QListWidgetItem(m_list_widget);
-dealMessage(messageW, item, msg, time, WidgetMsg::User_She);
-*/
+#include <QVBoxLayout>
 
 ChatMid::ChatMid(QWidget *parent) : QWidget(parent){
     this->resize(sz::chat_mid_wid_base);

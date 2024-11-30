@@ -1,6 +1,8 @@
 #pragma once
 
 #include "config.h"
+#include "Base/widget_blank.h"
+#include "Base/label_photo.h"
 
 class ChatTop : public WidgetBlank{
     Q_OBJECT

@@ -1,10 +1,13 @@
 #include "chat_page.h"
 #include "Base/widget_blank.h"
+#include "Base/Layout.h"
 #include "chat_default.h"
 
 #include "chat_top.h"
 #include "chat_mid.h"
 #include "chat_btm.h"
+
+
 
 ChatDefault *chat_default;
 ChatTop *chat_top;

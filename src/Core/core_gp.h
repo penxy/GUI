@@ -1,6 +1,9 @@
 #pragma once
 #include "config.h"
 #include <QList>
+#include "Service/const_json.h"
+
+#include "Chat/group.h"
 
 class CoreGp{
 public:
@@ -11,15 +14,12 @@ public:
     CoreGp(CoreGp&&) = default;
     CoreGp& operator=(CoreGp&&) = default;
 
-    virtual bool sendGroupAction(int groupId, Type::Msg::Action action) = 0;
-    virtual bool sendGroupMessage(int groupId, const QString& message) = 0;
-
-    virtual void addGroup(std::shared_ptr<ns::GroupInfo>) = 0;
-    virtual void delGroup(int idx) = 0;//以下标为准
+    virtual bool sendGroup(int groupId, TypeJson::Send type_send, ...) = 0;
+    virtual std::shared_ptr<Group> getGroup(int idx) = 0;
 
     virtual int getGroupId(int idx) = 0;
     virtual std::string getGroupName(int idx) = 0;
     virtual QPixmap getGroupPhoto(int idx) = 0; 
 protected:
-    QList<std::shared_ptr<ns::GroupInfo>> m_fd_list;
+    QList<std::shared_ptr<Group>> m_fd_list;
 };

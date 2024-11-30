@@ -1,7 +1,8 @@
 #pragma once
 
 #include "core_list_item.h"
-
+#include <memory>
+#include <QWidget>
 /**
  * @file gp_list_item.h
  * @class GpListItem

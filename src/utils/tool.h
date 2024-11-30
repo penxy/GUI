@@ -1,8 +1,6 @@
 #pragma once
 
 #include "single_model.h"
-#include "config.h"
-#include <QFile>
 
 class Tool : public Singleton<Tool> {
     friend class Singleton<Tool>;
@@ -14,29 +12,12 @@ protected:
 public: 
     enum TypeQss{
         ComBox,
-        QLabel
+        Label,
+        TextEdit,
     };
-
-    QString getQss(TypeQss type){
-        std::string file;
-        switch (type) {
-            case ComBox:{
-                file = FLAGS_qss + "/ComBox.qss";
-                break;
-            }
-            case QLabel:{
-                file = FLAGS_qss + "/QLabel.qss";
-                break;
-            }
-            default:
-                break;
-        }
-        QFile fileQss(file.c_str());
-        if(fileQss.open(QIODevice::ReadOnly)){
-            return QString::fromStdString(fileQss.readAll().toStdString());
-        }
-        return QString();
-    }
+    QString pix2Base64(const QPixmap &pixmap);
+    QPixmap base642Pix(const QString &base64);
+    QString getQss(TypeQss type);
 };
 
 #define TOOL Tool::get_inst()

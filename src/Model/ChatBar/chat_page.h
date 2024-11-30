@@ -2,6 +2,8 @@
 
 #include "config.h"
 #include "Core/core.h"
+#include <QStackedWidget>
+#include <memory>
 
 class ChatPage : public QWidget{
     Q_OBJECT

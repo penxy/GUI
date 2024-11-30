@@ -1,6 +1,11 @@
 #pragma once
 #include "config.h"
 
+/**
+ * @class CoreRecore
+ * @brief 加载和保存数据
+ * @note 暂不实现
+ */
 class CoreRecore{
 public:
     CoreRecore() = default;

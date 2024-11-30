@@ -2,6 +2,7 @@
 
 #include "config.h"
 #include "Base/btn_base.h"
+#include <QMouseEvent>
 
 class TitleBtn : public BtnBase{
 public:

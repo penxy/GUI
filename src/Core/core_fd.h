@@ -1,6 +1,10 @@
 #pragma once
 #include "config.h"
 #include <QList>
+#include <memory>
+#include "Service/const_json.h"
+
+#include "Chat/friend.h"
 
 class CoreFd{
 public:
@@ -11,15 +15,12 @@ public:
     CoreFd(CoreFd&&) = default;
     CoreFd& operator=(CoreFd&&) = default;
 
-    virtual bool sendFriendAction(int friendId, Type::Msg::Action action) = 0;
-    virtual bool sendFriendMessage(int friendId, const QString& message) = 0;
-
-    virtual void addFriend(std::shared_ptr<ns::FriendInfo>) = 0;
-    virtual void delFriend(int idx) = 0;//以下标为准
+    virtual bool sendFriend(int friendId, TypeJson::Send type_send, ...) = 0;
+    virtual std::shared_ptr<Friend> getFriend(int idx) = 0;
 
     virtual int getFriendId(int idx) = 0;
     virtual std::string getFriendName(int idx) = 0;
     virtual QPixmap getFriendPhoto(int idx) = 0; 
 protected:
-    QList<std::shared_ptr<ns::FriendInfo>> m_fd_list;
+    QList<std::shared_ptr<Friend>> m_fd_list;//好友列表
 };

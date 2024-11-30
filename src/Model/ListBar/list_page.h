@@ -1,6 +1,8 @@
 #pragma once
 #include "config.h"
 
+#include <QStackedWidget>
+#include <memory>
 
 /**
  * @file list_page.h
@@ -19,12 +21,11 @@ public:
         Friend,
         Group
     };
-    void SetPage(TypePage type_page);
+    void setPage(TypePage type_page);
+    void addList(Type::Info::Identity, std::shared_ptr<void>);
+    void delList(Type::Info::Identity, int);
 signals:
     void SigListChangeIdx(Type::Info::Identity identity, int idx);
-public slots:
-    void SlotListAdd(Type::Info::Identity, std::shared_ptr<void>);
-    void SlotListDel(Type::Info::Identity, int);
 private:
     QStackedWidget m_stack_wid;
 };

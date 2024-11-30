@@ -47,8 +47,11 @@ FILE(GLOB SOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Main/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Net/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Core/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Chat/*.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/widget/form/*.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/*.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/args.cpp

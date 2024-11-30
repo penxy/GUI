@@ -2,6 +2,7 @@
 
 #include "config.h"
 #include "bubble/bubble_msg.h"
+#include <QListWidget>
 
 class ChatMid : public QWidget{
     Q_OBJECT

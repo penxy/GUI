@@ -1,6 +1,5 @@
 #include "widget.h"
-#include <stdlib.h>
-#include <unistd.h>
+#include <QVBoxLayout>
 
 Widget::Widget(QWidget *parent) : QWidget(parent){
     m_core = new Core;
@@ -37,11 +36,11 @@ void Widget::SlotTool(ToolPage::TypeBtn type){
             break;
         }
         case ToolPage::TypeBtn::ChatPerson:{
-            m_list_page->SetPage(ListPage::TypePage::Friend);
+            m_list_page->setPage(ListPage::TypePage::Friend);
             break;
         }
         case ToolPage::TypeBtn::ChatGroup:{
-            m_list_page->SetPage(ListPage::TypePage::Group);
+            m_list_page->setPage(ListPage::TypePage::Group);
             break;
         }
         case ToolPage::TypeBtn::Setting:{

@@ -1,6 +1,9 @@
 #pragma once
 #include "config.h"
 
+#include <QLabel>
+#include <QLabel>
+#include "Base/label_photo.h"
 /**
  * @file core_list_item.h
  * @class CoreListItem

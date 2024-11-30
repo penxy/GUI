@@ -1,6 +1,11 @@
 #pragma once
 
-#include <QString>
+#include "config.h"
+
+/**
+ * @class CoreSelf
+ * @brief 个人信息保存与修改
+ */
 class CoreSelf{
 public:
     CoreSelf() = default;
@@ -12,10 +17,13 @@ public:
 
     virtual int getId() = 0;
     virtual QString getName() = 0;
-    virtual bool resetPass() = 0;
-    virtual bool resetName() = 0;
+    virtual bool setPass() = 0;
+    virtual bool setName() = 0;
+    virtual bool setStatus() = 0;
+    virtual Type::Status getStatus() = 0;
 protected:
     int id;
     QString name;
     QString pass;
+    Type::Status status;
 };

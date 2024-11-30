@@ -2,6 +2,7 @@
 
 #include "core_list_item.h"
 
+#include <memory>
 /**
  * @file fd_list_item.h
  * @class FdListItem

@@ -1,138 +1,39 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-#include "Base/widget_blank.h"
-#include "Base/Layout.h"
-#include "Base/label_photo.h"
-
-#include <QWidget>
-#include <QHBoxLayout>
-#include <QLabel>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QString>
-#include <QPixmap>
-#include <QIcon>
-#include <QFile>
-#include <QList>
-#include <QListWidget>
-#include <QListWidgetItem>
-#include <QStackedWidget>
 #include <QSize>
-#include <QTextEdit>
-#include <QKeyEvent>
-#include <QFrame>
-#include <QVector>
-
-
-#include <memory>
-#include <iostream>
 #include <QDebug>
-
-#include "gflags/gflags.h"
-#include "utils/interface.h"
+#include <QPixmap>
 
 // #include "nlohmann/json.hpp"
 // using json = nlohmann::json;
 //==================================enum===================================//
+
+/**
+ * @namespace Type
+ * @brief 对外暴露的枚举类型
+ */
 namespace Type{
-    class Info{
-    public:
-        enum class Role{
-            Owner = 0,
-            Admin = 1,
-            Member = 2
-        };
-        enum class SelfConfig{
-            Name,
-            Password
-        };
-        enum class Identity{
-            Friend,
-            Group
-        };
+    /**
+     * @enum Role
+     * @brief 群成员角色
+     */
+    enum class Role{
+        Owner = 0,
+        Admin = 1,
+        Member = 2
     };
-
-    enum class Json{
-        Request,
-        Response
-    };
-
-    class Msg{
-    public:
-        enum class DataType{
-            Text,
-        };
-        enum class Category{
-            Message,
-            Action,
-            File,             // 文件传输, Up/Down/Send[E_File]
-        };
-        enum class Direction{//发送方向
-            Send,
-            Recv
-        };
-        enum class Action{
-            Regiest,
-            Add,
-            Delete,
-            Accept,
-            Reject, 
-            Find, 
-            Status,           //[<Status>online/offline]
-            ChangeInfo,
-        };
-        // status
-        enum class Status{
-            Online,
-            Busy,
-            Leave,
-            Hide
-        };
+    /**
+    * @enum Status
+    */
+    enum class Status{
+        Online,
+        Offline,
+        Busy,
+        Away
     };
 }
 
-//=======================================Class=======================================
-
-namespace ns{
-    struct SelfSetting{
-        int id;
-        std::string name;
-        QPixmap photo;
-        std::string password;//[MD5]
-        Type::Msg::Status status;
-    };
-    struct FriendInfo{
-        int id;
-        std::string name;
-        QPixmap photo;
-        FriendInfo() = default;
-        FriendInfo(int id, const char *name, QPixmap photo) : id(id), name(name), photo(photo) {};
-    };
-    struct GroupInfo{
-        int id;
-        std::string name;
-        QPixmap photo;
-        QList<std::pair<FriendInfo, Type::Info::Role>> members;
-        GroupInfo() = default;
-        GroupInfo(int id, const char *name, QPixmap photo, QList<std::pair<FriendInfo, Type::Info::Role>> members) : id(id), name(name), photo(photo), members(members) {};
-    };
-    struct MsgContent{
-        time_t time;
-        std::string content;
-        Type::Msg::Direction direction; // 发送者还是接收者
-    };
-    struct MsgJson{
-        int id;
-        Type::Msg::Category identity;
-
-        //E_Identity::Group
-        int gid = -1;
-        Type::Info::Role role;
-
-        MsgContent msg_info;
-    };
-};
 
 //=======================================define=======================================
 #include <QTimer>
@@ -215,5 +116,4 @@ namespace sz{
 #endif // sc
 }
 
-DECLARE_string(qss);
 #endif // __CONFIG_H__
