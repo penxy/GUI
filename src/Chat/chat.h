@@ -5,6 +5,11 @@
 #include "chatid.h"
 #include "utils/interface.h"
 
+
+/**
+ * @class Chat
+ * @brief Friend和Group的基类, 定义了一些基本的接口和信号
+ */
 class Chat : public QObject
 {
     Q_OBJECT

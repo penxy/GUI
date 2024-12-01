@@ -5,6 +5,10 @@
 #include <QStackedWidget>
 #include <memory>
 
+/**
+ * @class ChatPage
+ * @brief 总的聊天页面，对外接口
+ */
 class ChatPage : public QWidget{
     Q_OBJECT
 public:

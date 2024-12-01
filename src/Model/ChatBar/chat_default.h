@@ -4,6 +4,10 @@
 #include <QLabel>
 #include <QHBoxLayout>
 
+/**
+ * @class ChatDefault
+ * @brief 右侧聊天栏默认界面
+ */
 class ChatDefault : public QWidget{
 public:
     ChatDefault(QWidget *parent = nullptr){

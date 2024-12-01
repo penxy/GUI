@@ -5,6 +5,11 @@
 #include <QByteArray>
 #include <memory>
 
+
+/**
+ * @class ChatId
+ * @brief id of Friend and Group
+ */
 class ChatId{
 public:
     ChatId() = default;

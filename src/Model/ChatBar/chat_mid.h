@@ -4,6 +4,11 @@
 #include "bubble/bubble_msg.h"
 #include <QListWidget>
 
+
+/**
+ * @class ChatMid
+ * @brief 对话框
+ */
 class ChatMid : public QWidget{
     Q_OBJECT
 public:

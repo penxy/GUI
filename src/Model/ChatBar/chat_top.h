@@ -4,6 +4,10 @@
 #include "Base/widget_blank.h"
 #include "Base/label_photo.h"
 
+/**
+ * @class ChatTop
+ * @brief 聊天顶部栏
+ */
 class ChatTop : public WidgetBlank{
     Q_OBJECT
 public:

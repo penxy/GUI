@@ -6,7 +6,6 @@
 #include <QPixmap>
 
 /**
- * @file friend.h
  * @class Friend
  */
 class Friend final : public Chat, public std::enable_shared_from_this<Friend>{

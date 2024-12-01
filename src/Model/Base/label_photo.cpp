@@ -12,7 +12,7 @@ LabelPhoto::LabelPhoto(QWidget *parent) : QLabel(parent){
     setStyleSheet(qss);
 }
 
-void LabelPhoto::SetPhoto(QPixmap pixmap){
+void LabelPhoto::SetPhoto(const QPixmap& pixmap){
     //pixmap = pixmap.scaled(this->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
     this->setPixmap(pixmap);
 }

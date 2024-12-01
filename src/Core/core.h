@@ -13,14 +13,11 @@
 
 class Protocol;
 /**
- * @file core.h
  * @class Core
  * @brief 界面要操作数据的所有接口所在
  * @note 所有的改变操作都不会有多个线程同时操作，因此不需要加锁
  * @todo 完善并实现接口
- * 
- * @details 
- * 凡是涉及要发送的消息，都需要调用Protocol的enqueueSend()接口
+ * @details 凡是涉及要发送的消息，都需要调用Protocol的enqueueSend()接口;存在信号，当信息改变后，会发送信号改变相应的 ui 类
  */
 class Core final : public QObject,
                    public CoreFd,

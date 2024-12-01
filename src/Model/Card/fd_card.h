@@ -9,6 +9,11 @@
 #include "Chat/friend.h"
 #include "Base/label_photo.h"
 
+
+/**
+ * @class FdCard
+ * @brief 好友卡片
+ */
 class FdCard : public QDialog {
     Q_OBJECT
 public:

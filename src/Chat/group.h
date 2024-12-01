@@ -8,7 +8,6 @@
 #include <QPixmap>
 
 /**
- * @file group.h
  * @class Group
  */
 class Group final : public Chat, public std::enable_shared_from_this<Group>{
