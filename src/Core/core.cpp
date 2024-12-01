@@ -23,11 +23,11 @@ QPixmap& Core::getGroupPhoto(int idx){QPixmap p;return p;}
 //self
 bool Core::setPass(const QString& pass){return true;}
 bool Core::setName(const QString& name){return true;}
-// void setStatus(const Type::Status& status){}
+bool Core::setStatus(const Type::Status& status){}
 
 ChatId& Core::getId(){return m_id;}
 QString& Core::getName(){return m_name; }
-// Type::Status& getStatus(){Type::Status s = Type::Status::Online;return s;}//? why m_status not define?
+Type::Status& Core::getStatus(){return m_status;}//? why m_status not define?
 
 //Recore
 void Core::loadGroupRecore(int idx){}

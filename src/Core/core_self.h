@@ -18,11 +18,11 @@ public:
 
     virtual bool setPass(const QString& pass) = 0;
     virtual bool setName(const QString& name) = 0;
-    // virtual bool setStatus(const Type::Status& status) = 0;
+    virtual bool setStatus(const Type::Status& status) = 0;
     
     virtual ChatId& getId() = 0;
     virtual QString& getName() = 0;
-    // virtual Type::Status& getStatus() = 0;
+    virtual Type::Status& getStatus() = 0;
 protected:
     ChatId m_id;
     QString m_name;

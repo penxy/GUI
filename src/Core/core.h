@@ -17,8 +17,10 @@ class Protocol;
  * @class Core
  * @brief 界面要操作数据的所有接口所在
  * @note 所有的改变操作都不会有多个线程同时操作，因此不需要加锁
- * @details 凡是涉及要发送的消息，都需要调用Protocol的enqueueSend()接口
  * @todo 完善并实现接口
+ * 
+ * @details 
+ * 凡是涉及要发送的消息，都需要调用Protocol的enqueueSend()接口
  */
 class Core final : public QObject,
                    public CoreFd,
@@ -54,11 +56,11 @@ public:
     //self
     bool setPass(const QString& pass) override;
     bool setName(const QString& name) override;
-    // bool setStatus(const Type::Status& status) override;
+    bool setStatus(const Type::Status& status) override;
 
     ChatId& getId() override;
     QString& getName() override;
-    // Type::Status& getStatus() override;
+    Type::Status& getStatus() override;
 
     //core
     void loadGroupRecore(int idx) override;
