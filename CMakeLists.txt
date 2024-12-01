@@ -41,12 +41,12 @@ FILE(GLOB SOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/ChatBar/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/ChatBar/bubble/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/TitleBar/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Search/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Card/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/test/*.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Main/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/Net/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Service/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src//Service/Net/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Core/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Chat/*.cpp
 

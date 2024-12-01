@@ -4,3 +4,4 @@ latex
 Book.md
 doc.dot
 build/*
+release/Linux/bin/*

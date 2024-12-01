@@ -7,8 +7,10 @@
 #include <semaphore.h>
 #include <vector>
 #include "Core/core.h"
+#include "Net/net_core.h"
 
 class Core;
+class NetCore;
 
 /**
  * @class Protocol
@@ -16,7 +18,7 @@ class Core;
  */
 class Protocol : public BaseService, public std::enable_shared_from_this<Protocol>{
 public:
-    Protocol() = default;
+    Protocol(std::shared_ptr<NetCore>net_core);
     ~Protocol();
 public:
     void init(std::shared_ptr<Core>core, int account_id);
@@ -37,6 +39,7 @@ private:
     sem_t m_sem_wait;                               //等待信号量
 
     std::shared_ptr<Core> m_core;                   //解析json后，调用Core的接口
+    std::shared_ptr<NetCore>m_net_core;             //发送和接收json
 
     struct Hand{
         QString account_id;                         //发送者id

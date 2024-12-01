@@ -10,8 +10,7 @@
  * @param[in] protocol 协议指针
  * @brief 初始化网络
  */
-void NetCore::init(std::string& host, int port, std::shared_ptr<Protocol>protocol){
-    this->m_protocol = protocol;
+void NetCore::init(std::string& host, int port){
     m_sock_client = m_tcp.createsocket(port, host.c_str());
     assert(m_sock_client >= 0);
 

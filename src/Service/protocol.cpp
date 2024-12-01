@@ -1,5 +1,7 @@
 #include "protocol.h"
 
+
+Protocol::Protocol(std::shared_ptr<NetCore>net_core) : m_net_core(net_core){}
 /**
  * @def init
  * @breif 初始化协议
