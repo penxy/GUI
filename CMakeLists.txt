@@ -17,11 +17,12 @@ find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5 COMPONENTS Svg REQUIRED)
 find_package(Qt5 COMPONENTS Sql REQUIRED)
+find_package(Qt5 COMPONENTS Network REQUIRED)
 
 list(APPEND CMAKE_AUTOMOC_SEARCH_PATHS "./src/widget/form/rmchatdialog.ui")
 
-set(INCLUDE_Qt5 ${Qt5Core_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS} ${Qt5Svg_INCLUDE_DIRS} ${Qt5Sql_INCLUDE_DIRS})
-set(LIBS_Qt5 ${Qt5Core_LIBRARIESY} ${Qt5Widgets_LIBRARIES} ${Qt5Svg_LIBRARIES} ${Qt5Sql_LIBRARIES})
+set(INCLUDE_Qt5 ${Qt5Core_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS} ${Qt5Svg_INCLUDE_DIRS} ${Qt5Sql_INCLUDE_DIRS} ${Qt5Network_INCLUDE_DIRS})
+set(LIBS_Qt5 ${Qt5Core_LIBRARIESY} ${Qt5Widgets_LIBRARIES} ${Qt5Svg_LIBRARIES} ${Qt5Sql_LIBRARIES} ${Qt5Network_LIBRARIES})
 message(STATUS "INCLUDE_Qt5: ${INCLUDE_Qt5}")
 message(STATUS "LIBS_Qt5 : ${LIBS_Qt5}")
 
@@ -62,7 +63,6 @@ FILE(GLOB SOURCE
 )
 FILE(GLOB LIBS
     ${CMAKE_CURRENT_SOURCE_DIR}/release/Linux/lib/gflags/libgflags${CMAKE_STATIC_LIBRARY_SUFFIX}
-    ${CMAKE_CURRENT_SOURCE_DIR}/release/Linux/lib/libhv/libhv_static${CMAKE_STATIC_LIBRARY_SUFFIX}
 )
 message(STATUS LIBS = "${LIBS}")
 SET(LIBS_SYS "-lpthread")
