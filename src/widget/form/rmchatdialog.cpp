@@ -17,7 +17,7 @@ RmChatDialog::RmChatDialog(QWidget* parent) : QDialog(parent){
     removeButton->setText(tr("Remove"));
     cancelButton->setDefault(true);
     adjustSize();
-    // connect(ui.buttonBox, &QDialogButtonBox::accepted, this, &RemoveChatDialog::onAccepted);
-    // connect(ui.buttonBox, &QDialogButtonBox::rejected, this, &RemoveChatDialog::close);
+    connect(ui.buttonBox, &QDialogButtonBox::accepted, [this](){emit SigRmChatAgree();});
+    connect(ui.buttonBox, &QDialogButtonBox::rejected, this, &RmChatDialog::close);
     setFocus();
 }
