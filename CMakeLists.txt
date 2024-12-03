@@ -6,7 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-add_compile_options(-g3)  # 添加-g3选项以生成更详细的调试信息
+add_compile_options(-g3)
 add_compile_options(-w)
 
 
@@ -16,11 +16,12 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/release/Linux/bin")
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5 COMPONENTS Svg REQUIRED)
+find_package(Qt5 COMPONENTS Sql REQUIRED)
 
 list(APPEND CMAKE_AUTOMOC_SEARCH_PATHS "./src/widget/form/rmchatdialog.ui")
 
-set(INCLUDE_Qt5 ${Qt5Core_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS} ${Qt5Svg_INCLUDE_DIRS})
-set(LIBS_Qt5 ${Qt5Core_LIBRARIESY} ${Qt5Widgets_LIBRARIES} ${Qt5Svg_LIBRARIES})
+set(INCLUDE_Qt5 ${Qt5Core_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS} ${Qt5Svg_INCLUDE_DIRS} ${Qt5Sql_INCLUDE_DIRS})
+set(LIBS_Qt5 ${Qt5Core_LIBRARIESY} ${Qt5Widgets_LIBRARIES} ${Qt5Svg_LIBRARIES} ${Qt5Sql_LIBRARIES})
 message(STATUS "INCLUDE_Qt5: ${INCLUDE_Qt5}")
 message(STATUS "LIBS_Qt5 : ${LIBS_Qt5}")
 
@@ -49,6 +50,7 @@ FILE(GLOB SOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/src//Service/Net/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Core/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Chat/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Data/*.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/widget/form/*.cpp
 
@@ -58,7 +60,6 @@ FILE(GLOB SOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/args.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/icons.qrc
 )
-FILE(GLOB HEADER src/*/*.h)
 FILE(GLOB LIBS
     ${CMAKE_CURRENT_SOURCE_DIR}/release/Linux/lib/gflags/libgflags${CMAKE_STATIC_LIBRARY_SUFFIX}
     ${CMAKE_CURRENT_SOURCE_DIR}/release/Linux/lib/libhv/libhv_static${CMAKE_STATIC_LIBRARY_SUFFIX}
@@ -69,7 +70,6 @@ SET(LIBS_SYS "-lpthread")
 add_executable(
     ${App}
     ${SOURCE}
-    ${HEADER}
 )
 
 target_link_libraries(
