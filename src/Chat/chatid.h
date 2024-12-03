@@ -14,6 +14,7 @@ class ChatId{
 public:
     ChatId() = default;
     ChatId(const QByteArray &id);
+    ChatId(const QString &id);
     ChatId& operator = (const ChatId &other);
 
     bool operator == (const ChatId& other) const;

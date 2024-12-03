@@ -6,6 +6,9 @@
 ChatId::ChatId(const QByteArray &id) : m_id(id){
 
 }
+ChatId::ChatId(const QString &id){
+    m_id = id.toUtf8();
+}
 ChatId& ChatId::operator = (const ChatId &other){
     m_id = other.m_id;
     return *this;
