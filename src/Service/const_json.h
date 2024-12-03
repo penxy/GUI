@@ -24,14 +24,12 @@ namespace TypeJson{
         Regiest,
         CreateGroup,
 
-        FdFind,
         FdAdd,
         FdDel,
         FdAccept,
         FdReject,
         FdText,
 
-        GpFind,
         GpAdd,
         GpDel,
         GpAccept,
