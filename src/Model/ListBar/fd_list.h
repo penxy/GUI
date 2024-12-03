@@ -1,7 +1,7 @@
 #pragma once
 
 #include "core_list.h"
-#include "Chat/friend.h"
+class Core;
 
 /**
  * @file fd_list.h

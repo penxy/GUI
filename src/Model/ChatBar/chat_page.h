@@ -1,9 +1,16 @@
 #pragma once
 
 #include "config.h"
-#include "Core/core.h"
 #include <QStackedWidget>
 #include <memory>
+
+class Core;
+class Group;
+class Friend;
+class ChatDefault;
+class ChatTop;
+class ChatMid;
+class ChatBtm;
 
 /**
  * @class ChatPage
@@ -23,4 +30,9 @@ private:
 
     QStackedWidget m_chat_main;
     std::shared_ptr<Core> m_core;
+
+    ChatDefault *chat_default;
+    ChatTop *chat_top;
+    ChatMid *chat_mid;
+    ChatBtm *chat_btm;
 };

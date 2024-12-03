@@ -5,11 +5,10 @@
 #include <QPushButton>
 #include <QPixmap>
 #include <memory>
-
-#include "Chat/friend.h"
 #include "Base/label_photo.h"
 
-
+class Friend;
+class ChatId;
 /**
  * @class FdCard
  * @brief 好友卡片

@@ -3,7 +3,8 @@
 #include "core_list_item.h"
 #include <memory>
 #include <QWidget>
-#include "Chat/group.h"
+class Group;
+
 /**
  * @file gp_list_item.h
  * @class GpListItem

@@ -2,17 +2,11 @@
 #include "Base/widget_blank.h"
 #include "Base/Layout.h"
 #include "chat_default.h"
+#include "Core/core.h"
 
 #include "chat_top.h"
 #include "chat_mid.h"
 #include "chat_btm.h"
-
-
-
-ChatDefault *chat_default;
-ChatTop *chat_top;
-ChatMid *chat_mid;
-ChatBtm *chat_btm;
 
 ChatPage::ChatPage(std::shared_ptr<Core> core, QWidget *parent) : QWidget(parent), m_core(core){
     chat_default = new ChatDefault;

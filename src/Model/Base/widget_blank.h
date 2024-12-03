@@ -3,6 +3,10 @@
 
 #include <QWidget>
 
+/**
+ * @class WidgetBlank
+ * @brief 空的QWidget
+ */
 class WidgetBlank : public QWidget{
     Q_OBJECT
 public:

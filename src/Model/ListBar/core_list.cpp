@@ -1,5 +1,6 @@
 #include "core_list.h"
 #include <QVBoxLayout>
+#include "Core/core.h"
 
 CoreList::CoreList(Type::Identity identity, std::shared_ptr<Core> core, QWidget *parent) : QWidget(parent), m_identity(identity), m_core(core) {
     // this->setFixedWidth(sz::list_bar_w);

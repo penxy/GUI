@@ -1,9 +1,9 @@
 #pragma once
 
 #include "core_list_item.h"
-
 #include <memory>
-#include "Chat/friend.h"
+
+class Friend;
 /**
  * @file fd_list_item.h
  * @class FdListItem

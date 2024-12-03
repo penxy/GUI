@@ -1,6 +1,5 @@
 #pragma once
 
-
 class BaseService{
 public:
     BaseService() = default;

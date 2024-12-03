@@ -1,13 +1,14 @@
 #include "list_page.h"
+#include <QHBoxLayout>
+
 #include "fd_list.h"
 #include "gp_list.h"
-
-#include <QHBoxLayout>
 #include "utils/tool.h"
+#include "Core/core.h"
 
 ListPage::ListPage(std::shared_ptr<Core> core, QWidget *parent) : QWidget(parent){
-    FdList *m_fd_list = new FdList(core, this);
-    GpList *m_gp_list = new GpList(core, this);
+    m_fd_list = new FdList(core, this);
+    m_gp_list = new GpList(core, this);
 #if 1 
     //test
     for(int i=0;i<2;i++){

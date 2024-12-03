@@ -8,23 +8,6 @@
  */
 namespace TypeJson{
     /**
-     * @struct Hand
-     * @brief 消息头部, Protocol::createHead要用到
-     */
-    struct Hand{
-        bool is_request;            //请求/响应包
-        std::string account_id;     //发送者id
-        int index;                  //消息下标
-        time_t time;                //发送时间
-        Hand() = default;
-        Hand(std::string account_id, int index, time_t time){
-            this->account_id = account_id;
-            this->index = index;
-            this->time = time;
-        }
-    };
-
-    /**
      * @enum Leval
      * @brief 优先级
      */

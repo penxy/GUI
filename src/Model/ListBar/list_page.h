@@ -1,8 +1,11 @@
 #pragma once
 #include "config.h"
-#include "Core/core.h"
 #include <QStackedWidget>
 #include <memory>
+
+class Core;
+class FdList;
+class GpList;
 
 /**
  * @file list_page.h
@@ -28,4 +31,6 @@ signals:
     void SigListChangeIdx(Type::Identity identity, int idx);
 private:
     QStackedWidget m_stack_wid;
+    FdList *m_fd_list;
+    GpList *m_gp_list;
 };

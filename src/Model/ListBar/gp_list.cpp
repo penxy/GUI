@@ -1,5 +1,6 @@
 #include "gp_list.h"
 #include "gp_list_item.h"
+#include "Core/core.h"
 
 GpList::GpList(std::shared_ptr<Core> core, QWidget *parent) : CoreList(Type::Identity::Group, core, parent){
 }

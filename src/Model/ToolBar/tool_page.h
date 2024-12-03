@@ -1,8 +1,7 @@
 #pragma once
-
-#include "tool_btn.h"
 #include <QWidget>
 
+class ToolBtn;
 /**
  * @file tool_page.h
  * @brief 最左侧的工具栏页面

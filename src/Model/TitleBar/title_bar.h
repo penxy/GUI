@@ -1,6 +1,7 @@
 #pragma once
 #include "config.h"
-#include "title_btn.h"
+#include <QWidget>
+class TitleBtn;
 
 class TitleBar : public QWidget{
     Q_OBJECT

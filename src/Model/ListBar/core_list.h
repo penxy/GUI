@@ -4,7 +4,8 @@
 #include <QListWidget>
 #include <QWidget>
 #include <memory>
-#include "Core/core.h"
+
+class Core;
 
 /**
  * @file core_list.h

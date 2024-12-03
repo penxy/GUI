@@ -1,9 +1,10 @@
 #pragma once
 #include "config.h"
-#include "Chat/friend.h"
 
 #include <QWidget>
 #include <QLabel>
+
+class Friend;
 /**
  * @class Member
  * @brief 群成员列表项

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "core_list.h"
+class Core;
 
 /**
  * @file gp_list.h

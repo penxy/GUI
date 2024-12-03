@@ -1,5 +1,6 @@
 #include "tool_page.h"
 #include <QVBoxLayout>
+#include "tool_btn.h"
 #include "Base/widget_blank.h"
 #include "config.h"
 

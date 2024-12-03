@@ -1,6 +1,7 @@
 #include "fd_card.h"
 #include <QHBoxLayout>
 
+#include "Chat/friend.h"
 #include "utils/tool.h"
 
 FdCard::FdCard(std::shared_ptr<Friend>info, QWidget *parent) : QDialog(parent){

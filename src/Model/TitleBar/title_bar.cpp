@@ -1,6 +1,7 @@
 #include "title_bar.h"
 #include <QMainWindow>
 #include <QHBoxLayout>
+#include "title_btn.h"
 
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent){
     setWindowFlag(Qt::FramelessWindowHint);

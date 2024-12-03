@@ -1,5 +1,6 @@
 #include "fd_list.h"
 #include "fd_list_item.h"
+#include "Core/core.h"
 
 FdList::FdList(std::shared_ptr<Core> core, QWidget *parent) : CoreList(Type::Identity::Friend, core, parent){
 }

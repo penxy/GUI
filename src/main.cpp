@@ -1,14 +1,8 @@
 #include <QApplication>
 #include "Main/main_wid.h"
-#include "Search/find_page.h"
-#include <signal.h>
-#include <unistd.h>
-#include <chrono>
-#include <stdio.h>
-#include "Card/fd_card.h"
 #include "args.h"
-#include "test/wid_test.h"
 
+#if 1
 int main(int argc, char *argv[])  
 {  
     google::ParseCommandLineFlags(&argc, &argv, true);
@@ -21,3 +15,11 @@ int main(int argc, char *argv[])
     wMain.show();
     return app.exec();
 }
+#else
+#include "Service/Net/test.h"
+int main(int argc, char *argv[]) {
+    QCoreApplication a(argc, argv);
+    HttpClient client;
+    return a.exec();
+}
+#endif

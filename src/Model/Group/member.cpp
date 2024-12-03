@@ -1,5 +1,6 @@
 #include "member.h"
 #include <QHBoxLayout>
+#include "Chat/friend.h"
 
 Member::Member(std::pair<Friend, Type::Role>& info, QWidget *parent) : QWidget(parent) {
     {
