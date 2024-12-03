@@ -30,10 +30,9 @@ namespace TypeJson{
         FdReject,
         FdText,
 
-        GpAdd,
-        GpDel,
-        GpAccept,
-        GpReject,
+        GpCreate,
+        GpInvite,//invite not need response
+        GpQuit,
         GpText,
         GpName,
         GpPix,
