@@ -4,6 +4,8 @@
 #include "Model/ListBar/list_page.h"
 #include "Model/TitleBar/title_bar.h"
 #include "Model/ChatBar/chat_page.h"
+#include "Model/Add/add_fd_page.h"
+
 #include "Core/core.h"
 #include "Base/widget_blank.h"
 
@@ -13,6 +15,9 @@ Widget::Widget(QWidget *parent) : QWidget(parent){
 
     //m_stack_widget
     {
+        //default page
+        WidgetBlank *widget_default = new WidgetBlank(this);
+        m_stack_widget.addWidget(widget_default);
         //Chat Page
         m_list_page = new ListPage(m_core->shared_from_this(), this);
         m_chat_page = new ChatPage(m_core->shared_from_this(), this);
@@ -21,6 +26,12 @@ Widget::Widget(QWidget *parent) : QWidget(parent){
         layout_chat->addWidget(m_list_page);
         layout_chat->addWidget(m_chat_page);
         m_stack_widget.addWidget(widget_chat);
+        //Add Fd
+        m_add_fd_page = new AddFdPage(this);
+        m_stack_widget.addWidget(m_add_fd_page);
+        //Setting...
+
+        m_stack_widget.setCurrentIndex((int)TypeWid::Default);
     }
 
     m_title_bar = new TitleBar(this);
@@ -46,17 +57,21 @@ Widget::Widget(QWidget *parent) : QWidget(parent){
 void Widget::SlotTool(ToolPage::TypeBtn type){
     switch (type){
         case ToolPage::TypeBtn::Add:{
+            m_stack_widget.setCurrentIndex((int)TypeWid::AddFd);
             break;
         }
         case ToolPage::TypeBtn::ChatPerson:{
+            m_stack_widget.setCurrentIndex((int)TypeWid::Chat);
             m_list_page->setPage(ListPage::TypePage::Friend);
             break;
         }
         case ToolPage::TypeBtn::ChatGroup:{
+            m_stack_widget.setCurrentIndex((int)TypeWid::Chat);
             m_list_page->setPage(ListPage::TypePage::Group);
             break;
         }
         case ToolPage::TypeBtn::Setting:{
+            m_stack_widget.setCurrentIndex((int)TypeWid::Default);
             break;
         }
         default:

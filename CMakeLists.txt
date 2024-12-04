@@ -46,13 +46,16 @@ FILE(GLOB SOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/TitleBar/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Card/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/test/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Add/*.cpp
+
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Main/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Service/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src//Service/Net/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Service/Net/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Core/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Chat/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Data/*.cpp
+
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/widget/form/*.cpp
 
