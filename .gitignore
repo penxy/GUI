@@ -1,7 +1,15 @@
 html
 latex
-.vscode
-Book.md
 doc.dot
+
+.vscode
 build/*
+
+# 可执行文件
 release/Linux/bin/*
+
+# 调试文件
+test.cpp
+src/Model/test
+
+Book.md
