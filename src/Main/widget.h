@@ -1,12 +1,14 @@
 #pragma once
 #include "config.h"
-#include "ListBar/list_page.h"
-#include "ToolBar/tool_page.h"
-#include "ChatBar/chat_page.h"
-#include "TitleBar/title_bar.h"
+#include <memory>
+#include "Model/ToolBar/tool_page.h"
+#include <QStackedWidget>
 
-#include "Card/fd_card.h"
-#include "Core/core.h"
+class Core;
+class TitleBar;
+class ListPage;
+class ChatPage;
+class FdCard;
 
 /**
  * @class Widget
@@ -22,11 +24,15 @@ public slots:
     void SlotTool(ToolPage::TypeBtn type);                                          //工具栏按钮点击, 打开相应的页面
     //void SlotAdd(ChatId id);                                                        //添加ChatId的dialog点击添加
 private:
-    ListPage *m_list_page;
-    ToolPage *m_tool_page;
-    ChatPage *m_chat_page;
     TitleBar *m_title_bar;
-        
+
+    ToolPage *m_tool_page;
+    QStackedWidget m_stack_widget;
+
+    //stack widget items
+    ListPage *m_list_page;
+    ChatPage *m_chat_page;
+
     FdCard *m_card = nullptr;
     std::shared_ptr<Core> m_core;
 };

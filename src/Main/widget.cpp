@@ -1,31 +1,46 @@
 #include "widget.h"
 #include <QVBoxLayout>
 #include <unistd.h>
+#include "Model/ListBar/list_page.h"
+#include "Model/TitleBar/title_bar.h"
+#include "Model/ChatBar/chat_page.h"
+#include "Core/core.h"
+#include "Base/widget_blank.h"
 
 Widget::Widget(QWidget *parent) : QWidget(parent){
     m_core = std::make_shared<Core>(nullptr);
     m_tool_page = new ToolPage(this);
-    m_list_page = new ListPage(m_core->shared_from_this(), this);
-    m_chat_page = new ChatPage(m_core->shared_from_this(), this);
+
+    //m_stack_widget
+    {
+        //Chat Page
+        m_list_page = new ListPage(m_core->shared_from_this(), this);
+        m_chat_page = new ChatPage(m_core->shared_from_this(), this);
+        WidgetBlank *widget_chat = new WidgetBlank(this);
+        QHBoxLayout *layout_chat = new QHBoxLayout(widget_chat);
+        layout_chat->addWidget(m_list_page);
+        layout_chat->addWidget(m_chat_page);
+        m_stack_widget.addWidget(widget_chat);
+    }
+
     m_title_bar = new TitleBar(this);
+    QHBoxLayout *layout_top = new QHBoxLayout;
+    layout_top->addWidget(m_title_bar);
 
-    QVBoxLayout *layout_chat = new QVBoxLayout;
-    layout_chat->setSpacing(0);
-    layout_chat->addWidget(m_title_bar);
-    layout_chat->addWidget(m_chat_page);
+    QHBoxLayout *layout_btm = new QHBoxLayout;
+    layout_btm->setSpacing(0);
+    layout_btm->addWidget(m_tool_page);
+    layout_btm->addWidget(&m_stack_widget);
 
-    QHBoxLayout *layout_main = new QHBoxLayout(this);
+    QVBoxLayout *layout_main = new QVBoxLayout(this);
     layout_main->setSpacing(0);
-    layout_main->addWidget(m_tool_page);
-    layout_main->addWidget(m_list_page);
-    layout_main->addLayout(layout_chat);
+    layout_main->addLayout(layout_top);
+    layout_main->addLayout(layout_btm);
 
-    // this->resize(800, 600);
 
     //所有对外信号所在
-    connect(m_list_page, &ListPage::SigListChangeIdx, m_chat_page, &ChatPage::SlotListChangeIdx);
+    // connect(m_list_page, &ListPage::SigListChangeIdx, m_chat_page, &ChatPage::SlotListChangeIdx);
     connect(m_tool_page, &ToolPage::SigTool, this, &Widget::SlotTool);
-    // connect(m_find_page, &FindPage::SigFind, this, &Widget::SlotFind);
 }
 
 void Widget::SlotTool(ToolPage::TypeBtn type){
