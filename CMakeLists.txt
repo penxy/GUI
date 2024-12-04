@@ -80,3 +80,13 @@ target_link_libraries(
     ${LIBS_SYS}
 )
 
+add_executable(
+    main
+    test.cpp
+)
+target_link_libraries(
+    main
+    ${LIBS_Qt5}
+    ${LIBS}
+    ${LIBS_SYS}
+)
