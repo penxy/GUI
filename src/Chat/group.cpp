@@ -1,7 +1,7 @@
 #include "group.h"
 #include "utils/tool.h"
 
-Group::Group(const ChatId& id, const QString& pix_base64, const QString& name) : m_id(id), m_name(name){
+Group::Group(const ChatId& id, const QString& pix_base64, const QString& name) : m_chat_id(id), m_name(name){
     m_pix.loadFromData(QByteArray::fromBase64(pix_base64.toUtf8()));
     
 
@@ -9,7 +9,7 @@ Group::Group(const ChatId& id, const QString& pix_base64, const QString& name) :
 }
 Group& Group::operator=(const Group& other){
     if(this == &other) return *this;
-    m_id = other.m_id;
+    m_chat_id = other.m_chat_id;
     m_name = other.m_name;
     m_pix = other.m_pix;
     return *this;
@@ -29,7 +29,7 @@ void Group::setName(const QString& name){
     }
 }
 ChatId Group::getId() const{
-    return m_id;
+    return m_chat_id;
 }
 QPixmap Group::getPix() const{
     return m_pix;

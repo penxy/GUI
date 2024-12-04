@@ -18,6 +18,7 @@ ListPage::ListPage(std::shared_ptr<Core> core, QWidget *parent) : QWidget(parent
         QString pix_base64 = TOOL.pix2Base64(pix);
         QString name = "name";
         auto f = std::make_shared<Friend>(Friend(id, pix_base64, name));
+        f->shared_from_this();
     }
 #endif
     m_stack_wid.addWidget(new QWidget(this));

@@ -40,6 +40,7 @@ FILE(GLOB SOURCE
     # src/*/*/*.cpp 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Base/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/ListBar/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/ListBar/Item/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/ToolBar/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/ChatBar/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/ChatBar/bubble/*.cpp

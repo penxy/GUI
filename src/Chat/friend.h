@@ -32,7 +32,7 @@ public:
 private:
     template <typename T> bool setVal(T& savedVal, T newVal);
 private:
-    ChatId                      m_id;
+    ChatId                      m_chat_id;
     QString                     m_name;
     QPixmap                     m_pix;
 };

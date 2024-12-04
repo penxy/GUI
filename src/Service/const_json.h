@@ -11,7 +11,7 @@ namespace TypeJson{
      * @enum Leval
      * @brief 优先级
      */
-    enum class Leval{
+    enum class Leval : uint8_t{
         Low = 0,
         Normal,
         High
@@ -20,7 +20,7 @@ namespace TypeJson{
      * @enum Send
      * @brief 发送的类型
      */
-    enum class Send{
+    enum class Send : uint8_t{
         Regiest,
         CreateGroup,
 
@@ -46,7 +46,7 @@ namespace TypeJson{
      * @enum Recv
      * @brief 接收的类型
      */
-    enum class Recv{
+    enum class Recv : uint8_t{
         FdFind,
         FdAdd,
         FdDel,

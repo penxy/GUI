@@ -12,6 +12,9 @@
 #include <QObject>
 
 class Protocol;
+class GpList;
+class FdList;
+
 /**
  * @class Core
  * @brief 界面要操作数据的所有接口所在
@@ -31,7 +34,8 @@ public:
     ~Core() = default;
 public:
     //fd
-    bool sendFriend(int friendId, TypeJson::Send type_send, ...) override;
+    bool sendFriend(int friendId, TypeJson::Send type_send, std::array<QVariant, 4>args) override;
+    void recvFriend(int friendId, TypeJson::Recv type_recv, std::array<QVariant, 4>args) override;
     
     std::shared_ptr<Friend>& getFriend(int idx) override;
     QList<std::shared_ptr<Friend>> &getFriendList() override;
@@ -41,7 +45,8 @@ public:
     QPixmap& getFriendPhoto(int idx) override; 
     
     //gp
-    bool sendGroup(int groupId, TypeJson::Send type_send, ...) override;
+    bool sendGroup(int groupId, TypeJson::Send type_send, std::array<QVariant, 4>args) override;
+    void recvGroup(int groupId, TypeJson::Recv type_recv, std::array<QVariant, 4>args) override;
 
     std::shared_ptr<Group>& getGroup(int idx) override;
     QList<std::shared_ptr<Group>> &getGroupList() override;
@@ -58,6 +63,7 @@ public:
     ChatId& getId() override;
     QString& getName() override;
     Type::Status& getStatus() override;
+    QString& getPublicKey() override;
 
     //core
     void loadGroupRecore(int idx) override;

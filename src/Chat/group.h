@@ -7,6 +7,8 @@
 #include <memory>
 #include <QPixmap>
 
+class GpList;
+
 /**
  * @class Group
  */
@@ -34,7 +36,7 @@ public:
 private:
     template <typename T> bool setVal(T& savedVal, T newVal);
 private:
-    ChatId                                          m_id;
+    ChatId                                          m_chat_id;
     QString                                         m_name;
     QPixmap                                         m_pix;
     QList<std::pair<Friend, Type::Role>>            m_members;

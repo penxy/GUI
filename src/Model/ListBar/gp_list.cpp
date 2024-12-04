@@ -1,5 +1,5 @@
 #include "gp_list.h"
-#include "gp_list_item.h"
+#include "Item/gp_list_item.h"
 #include "Core/core.h"
 
 GpList::GpList(std::shared_ptr<Core> core, QWidget *parent) : CoreList(Type::Identity::Group, core, parent){
@@ -20,7 +20,7 @@ void GpList::SlotUpdateListGp(){
         }
     }
     //set all items
-    auto gp_list = m_core.get()->getFriendList();
+    auto gp_list = m_core->getFriendList();
     for(auto& gp : gp_list){
         GpListItem *wid_gp_item = new GpListItem(gp, this);
         QListWidgetItem *item = new QListWidgetItem(&m_wid_list);

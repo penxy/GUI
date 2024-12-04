@@ -8,7 +8,6 @@ class Core;
 class TitleBar;
 class ListPage;
 class ChatPage;
-class FdCard;
 class AddFdPage;
 
 /**
@@ -39,10 +38,9 @@ private:
     //stack widget items
     ListPage *m_list_page;
     ChatPage *m_chat_page;
-    //find fd
+    //add fd
     AddFdPage *m_add_fd_page;
 
 
-    FdCard *m_card = nullptr;
     std::shared_ptr<Core> m_core;
 };

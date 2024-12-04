@@ -12,6 +12,7 @@ class ChatId;
 /**
  * @class FdCard
  * @brief 好友卡片
+ * @deprecated 已弃用
  */
 class FdCard : public QDialog {
     Q_OBJECT

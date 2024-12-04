@@ -2,7 +2,7 @@
 #include "utils/tool.h"
 Friend::Friend(){}
 
-Friend::Friend(const ChatId& id, const QString& pix_base64, const QString& name) : m_id(id), m_name(name){
+Friend::Friend(const ChatId& id, const QString& pix_base64, const QString& name) : m_chat_id(id), m_name(name){
     m_pix.loadFromData(QByteArray::fromBase64(pix_base64.toUtf8()));
     
 
@@ -10,7 +10,7 @@ Friend::Friend(const ChatId& id, const QString& pix_base64, const QString& name)
 }
 Friend& Friend::operator=(const Friend& other){
     if(this == &other) return *this;
-    m_id = other.m_id;
+    m_chat_id = other.m_chat_id;
     m_name = other.m_name;
     m_pix = other.m_pix;
     return *this;
@@ -31,7 +31,7 @@ void Friend::setName(const QString& name){
     }
 }
 ChatId Friend::getId() const{
-    return m_id;
+    return m_chat_id;
 }
 QPixmap Friend::getPix() const{
     return m_pix;

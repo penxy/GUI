@@ -1,5 +1,5 @@
 #include "fd_list.h"
-#include "fd_list_item.h"
+#include "Item/fd_list_item.h"
 #include "Core/core.h"
 
 FdList::FdList(std::shared_ptr<Core> core, QWidget *parent) : CoreList(Type::Identity::Friend, core, parent){
@@ -20,7 +20,7 @@ void FdList::SlotUpdateListFd(){
         }
     }
     //set all items
-    auto fd_list = m_core.get()->getFriendList();
+    auto fd_list = m_core->getFriendList();
     for(auto& fd : fd_list){
         FdListItem *wid_fd_item = new FdListItem(fd, this);
         QListWidgetItem *item = new QListWidgetItem(&m_wid_list);

@@ -23,9 +23,11 @@ public:
     virtual ChatId& getId() = 0;
     virtual QString& getName() = 0;
     virtual Type::Status& getStatus() = 0;
+    virtual QString& getPublicKey() = 0;
 protected:
     ChatId m_id;
     QString m_name;
     QString m_pass;
     Type::Status m_status;
+    QString m_publicKey;
 };
