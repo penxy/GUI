@@ -14,8 +14,8 @@ public:
     CoreGp(CoreGp&&) = default;
     CoreGp& operator=(CoreGp&&) = default;
 
-    virtual bool sendGroup(int groupId, TypeJson::Send type_send, std::array<QVariant, 4>args) = 0;
-    virtual void recvGroup(int groupId, TypeJson::Recv type_recv, std::array<QVariant, 4>args) = 0;
+    virtual bool sendGroup(TypeJson::Send type_send, std::array<QVariant, 4>args) = 0;
+    virtual void recvGroup(TypeJson::Recv type_recv, std::array<QVariant, 4>args) = 0;
     
     virtual std::shared_ptr<Group>& getGroup(int idx) = 0;
     virtual QList<std::shared_ptr<Group>>& getGroupList() = 0;

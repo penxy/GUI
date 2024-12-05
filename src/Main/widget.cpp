@@ -57,21 +57,21 @@ Widget::Widget(QWidget *parent) : QWidget(parent){
 void Widget::SlotTool(ToolPage::TypeBtn type){
     switch (type){
         case ToolPage::TypeBtn::Add:{
-            m_stack_widget.setCurrentIndex((int)TypeWid::AddFd);
+            m_stack_widget.setCurrentIndex(static_cast<uint8_t>(TypeWid::AddFd));
             break;
         }
         case ToolPage::TypeBtn::ChatPerson:{
-            m_stack_widget.setCurrentIndex((int)TypeWid::Chat);
+            m_stack_widget.setCurrentIndex(static_cast<uint8_t>(TypeWid::Chat));
             m_list_page->setPage(ListPage::TypePage::Friend);
             break;
         }
         case ToolPage::TypeBtn::ChatGroup:{
-            m_stack_widget.setCurrentIndex((int)TypeWid::Chat);
+            m_stack_widget.setCurrentIndex(static_cast<uint8_t>(TypeWid::Chat));
             m_list_page->setPage(ListPage::TypePage::Group);
             break;
         }
         case ToolPage::TypeBtn::Setting:{
-            m_stack_widget.setCurrentIndex((int)TypeWid::Default);
+            m_stack_widget.setCurrentIndex(static_cast<uint8_t>(TypeWid::Default));
             break;
         }
         default:

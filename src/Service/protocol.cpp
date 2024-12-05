@@ -80,5 +80,5 @@ bool Protocol::send(){
 void Protocol::onReadyRead(){
     if(m_socket.bytesAvailable() <= 0) return;
     QString recv_text = QString::fromUtf8(m_socket.readAll());
-    //...操作m_core;
+    //处理json,判断类型，解析分配参数，调用Core::recvGroup/Core::recvFriend
 }
